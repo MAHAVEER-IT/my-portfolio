@@ -1,0 +1,180 @@
+'use client';
+import { useState } from 'react';
+import Image from 'next/image';
+
+export default function AboutSection() {
+  const [activeTab, setActiveTab] = useState('story');
+
+  const timeline = [
+    { year: '2023', event: 'Started B.Tech IT at Sri Eshwar College', icon: '🎓' },
+    { year: '2024', event: 'Built Sow & Grow - AI farming solution', icon: '🌱' },
+    { year: '2025', event: 'Software Intern at Better Tomorrow', icon: '�' },
+    { year: '2027', event: 'Ready to innovate & lead', icon: '🚀' }
+  ];
+
+  const tabs = [
+    { id: 'story', label: 'My Story', icon: '📖' },
+    { id: 'journey', label: 'Journey', icon: '🗓️' },
+    { id: 'passion', label: 'Passion', icon: '❤️' }
+  ];
+
+  return (
+    <section id="about" className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{animationDelay: '2s'}}></div>
+      
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+            About Me
+          </h2>
+          <p className="text-lg text-gray-600">Get to know me better</p>
+        </div>
+
+        {/* Tabbed Content Section */}
+        <div className="bg-white/70 backdrop-blur-xl rounded-3xl border border-white/40 shadow-2xl overflow-hidden">
+          {/* Tab Navigation */}
+          <div className="flex border-b border-gray-200/50">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex-1 px-6 py-4 text-center font-semibold transition-all duration-300 relative ${
+                  activeTab === tab.id
+                    ? 'text-blue-600'
+                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50/50'
+                }`}
+              >
+                <span className="text-xl mr-2">{tab.icon}</span>
+                {tab.label}
+                {activeTab === tab.id && (
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-purple-600"></div>
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content */}
+          <div className="p-8 md:p-12">
+            {activeTab === 'story' && (
+              <div className="animate-fade-in">
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  {/* Professional Image */}
+                  <div className="md:w-1/3">
+                    <div className="relative w-56 h-56 mx-auto">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl animate-pulse-slow"></div>
+                      <div className="absolute inset-2 bg-white rounded-3xl overflow-hidden shadow-xl">
+                        <Image
+                          src="/mahaveer_hero.png"
+                          alt="Mahaveer K - Software Developer"
+                          fill
+                          className="object-cover"
+                          sizes="224px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Text Side */}
+                  <div className="md:w-2/3 space-y-4">
+                    <h3 className="text-3xl font-bold text-gray-800 mb-4">Hi, I'm Mahaveer! 👋</h3>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      I'm a passionate <span className="font-semibold text-blue-600">Software Developer</span> pursuing B.Tech in Information Technology at 
+                      <span className="font-semibold"> Sri Eshwar College of Engineering</span> (2023–2027).
+                    </p>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      My goal is to build <span className="font-semibold text-purple-600">impactful, scalable, and user-focused applications</span> that 
+                      blend creativity with clean architecture and solid engineering principles.
+                    </p>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      With hands-on experience in <span className="font-semibold">MERN, Flutter, and Next.js</span>, I enjoy turning complex ideas 
+                      into intuitive digital solutions. I'm also an active problem solver with <span className="font-semibold text-green-600">400+ coding challenges</span> solved!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'journey' && (
+              <div className="animate-fade-in">
+                <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">My Timeline</h3>
+                <div className="relative">
+                  {/* Timeline Line */}
+                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
+                  
+                  {/* Timeline Items */}
+                  <div className="space-y-8">
+                    {timeline.map((item, i) => (
+                      <div key={i} className={`flex items-center gap-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                        <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                          <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            <div className="text-sm font-bold text-blue-600 mb-2">{item.year}</div>
+                            <div className="text-lg text-gray-800 font-medium">{item.event}</div>
+                          </div>
+                        </div>
+                        
+                        {/* Center Icon */}
+                        <div className="relative z-10">
+                          <div className="w-16 h-16 bg-white rounded-full border-4 border-purple-500 flex items-center justify-center shadow-lg">
+                            <span className="text-2xl">{item.icon}</span>
+                          </div>
+                        </div>
+                        
+                        <div className="flex-1"></div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'passion' && (
+              <div className="animate-fade-in">
+                <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">What Drives Me</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl border border-blue-200 hover:shadow-xl transition-all duration-300">
+                    <div className="text-4xl mb-4">🏆</div>
+                    <h4 className="text-xl font-bold text-gray-800 mb-2">Competitive Spirit</h4>
+                    <p className="text-gray-700">
+                      Participated in multiple hackathons, earning top positions for innovation and execution. 
+                      I thrive in challenging environments that push me to think creatively.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-2xl border border-purple-200 hover:shadow-xl transition-all duration-300">
+                    <div className="text-4xl mb-4">🎯</div>
+                    <h4 className="text-xl font-bold text-gray-800 mb-2">Learning by Building</h4>
+                    <p className="text-gray-700">
+                      I believe the best way to learn is by creating. Every project is an opportunity to 
+                      experiment with new technologies and solve real-world problems.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200 hover:shadow-xl transition-all duration-300">
+                    <div className="text-4xl mb-4">🤝</div>
+                    <h4 className="text-xl font-bold text-gray-800 mb-2">Team Collaboration</h4>
+                    <p className="text-gray-700">
+                      Great products are built by great teams. I enjoy collaborating with others, 
+                      sharing knowledge, and building something bigger than myself.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-2xl border border-orange-200 hover:shadow-xl transition-all duration-300">
+                    <div className="text-4xl mb-4">💡</div>
+                    <h4 className="text-xl font-bold text-gray-800 mb-2">Innovation Mindset</h4>
+                    <p className="text-gray-700">
+                      From AI-powered farming apps to smart parking systems, I'm always exploring 
+                      how technology can make a meaningful impact in people's lives.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
