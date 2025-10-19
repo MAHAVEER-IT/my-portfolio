@@ -23,11 +23,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Smooth scroll behavior */
+/* Smooth scroll behavior with optimizations */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize all animations for performance */
+* {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 /* Custom Animations */
@@ -256,4 +268,34 @@ html {
 .scrollbar-thin {
   scrollbar-width: thin;
   scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+/* Performance optimizations for smooth scrolling */
+section {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* GPU acceleration for transforms and opacity */
+.transition-all,
+.transition-transform,
+.transition-opacity {
+  will-change: transform, opacity;
+}
+
+/* Optimize images for better performance */
+img {
+  content-visibility: auto;
 }

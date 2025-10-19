@@ -14,7 +14,15 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    // Delay initial animation to prevent layout shift
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    
+    // Optimize scroll performance
+    if (typeof window !== 'undefined') {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
