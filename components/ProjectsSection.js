@@ -32,6 +32,33 @@ export default function ProjectsSection() {
       githubLink: 'https://github.com/MAHAVEER-IT/visitor-parking-tracker.git',
       image: 'https://res.cloudinary.com/dkn3it92b/image/upload/v1755081124/dzjmgglyft3hdqwnecwq.png',
       color: 'from-orange-400 to-red-600'
+    },
+    { 
+      title: 'MyTravelLog ✈️', 
+      desc: 'A full-stack Next.js travel blog application that allows users to explore destinations, search locations, and engage with content while providing admin capabilities for content management', 
+      tech: 'Next.js | React | MongoDB | Mongoose | TailwindCSS | NextAuth.js | Cloudinary',
+      liveLink: 'https://my-travel-log-sooty.vercel.app/',
+      githubLink: 'https://github.com/MAHAVEER-IT/MyTravelLog.git',
+      image: 'https://res.cloudinary.com/dkn3it92b/image/upload/v1754153224/wqpj5fehcsyvymrl74ou.png',
+      color: 'from-cyan-400 to-blue-600'
+    },
+    { 
+      title: 'Bank Insight 🏦', 
+      desc: 'An all-in-one banking app that offers features such as balance check, mini statements, ATM blocking, customer support, loan calculators, nearby ATM/bank locator, currency converter, and expense tracker', 
+      tech: 'Flutter | Firebase | Currency Converter API | Google Maps API',
+      liveLink: 'https://drive.google.com/drive/folders/13j3pnF7rVRWrvD1OvyUghWhdSVP8HYQR',
+      githubLink: 'https://github.com/MAHAVEER-IT/bank_inish.git',
+      image: 'https://res.cloudinary.com/dkn3it92b/image/upload/v1751300070/ajzfnv0p6bweq3amnlbi.png',
+      color: 'from-indigo-400 to-purple-600'
+    },
+    { 
+      title: 'Blog App 📝', 
+      desc: 'A simple blog app demonstrating clean architecture and BLoC pattern in Flutter with Firebase integration for authentication and data storage', 
+      tech: 'Flutter | Firebase Firestore | Firebase Auth | Hive | BLoC Pattern | Clean Architecture',
+      liveLink: 'https://drive.google.com/drive/folders/1gO-ueeL_Biz7fTrmLjLf0Ol9jJhG76Io',
+      githubLink: 'https://github.com/MAHAVEER-IT/Blog_Flutter.git',
+      image: 'https://res.cloudinary.com/dkn3it92b/image/upload/v1751316254/wiujsd62cscl3wwvq2c2.png',
+      color: 'from-pink-400 to-rose-600'
     }
   ];
 
@@ -124,7 +151,7 @@ export default function ProjectsSection() {
           </div>
 
           {/* Project Thumbnails Sidebar */}
-          <div className="lg:w-1/3 flex lg:flex-col gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 w-full lg:max-h-[500px]">
+          <div className="lg:w-1/3 flex lg:flex-col gap-4 overflow-x-hidden overflow-y-auto pb-4 lg:pb-0 w-full lg:max-h-[450px] lg:pr-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 px-4 py-5">
             {projects.map((project, index) => (
               <button
                 key={index}
