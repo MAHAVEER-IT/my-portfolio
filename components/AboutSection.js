@@ -64,8 +64,8 @@ export default function AboutSection() {
                   {/* Professional Image */}
                   <div className="md:w-1/3">
                     <div className="relative w-56 h-56 mx-auto">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl animate-pulse-slow"></div>
-                      <div className="absolute inset-2 bg-white rounded-3xl overflow-hidden shadow-xl">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full animate-pulse-slow"></div>
+                      <div className="absolute inset-2 bg-white rounded-full overflow-hidden shadow-xl">
                         <Image
                           src="/mahaveer_hero.png"
                           alt="Mahaveer K - Software Developer"

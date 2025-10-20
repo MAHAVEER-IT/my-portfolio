@@ -10,8 +10,18 @@ export default function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    
+    // Construct mailto URL with form data
+    const subject = encodeURIComponent(`New Message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    // Open Gmail (or default email client) with pre-filled data
+    window.location.href = `mailto:mahaveerk.dev@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Optional: Reset form after submission
+    setFormData({ name: '', email: '', message: '' });
   };
 
   const contactInfo = [
