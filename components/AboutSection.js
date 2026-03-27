@@ -8,14 +8,20 @@ export default function AboutSection() {
   const timeline = [
     { year: '2023', event: 'Started B.Tech IT at Sri Eshwar College', icon: '🎓' },
     { year: '2024', event: 'Built Sow & Grow - AI farming solution', icon: '🌱' },
-    { year: '2025', event: 'Software Intern at Better Tomorrow', icon: '�' },
+    { year: '2025', event: 'Software Intern at Better Tomorrow', icon: '💼' },
     { year: '2027', event: 'Ready to innovate & lead', icon: '🚀' }
   ];
 
+  const quickStats = [
+    { value: '7+', label: 'Featured Projects' },
+    { value: '400+', label: 'Coding Problems Solved' },
+    { value: '1', label: 'Industry Internship' }
+  ];
+
   const tabs = [
-    { id: 'story', label: 'My Story', icon: '📖' },
-    { id: 'journey', label: 'Journey', icon: '🗓️' },
-    { id: 'passion', label: 'Passion', icon: '❤️' }
+    { id: 'story', label: 'My Story', shortLabel: 'Story', icon: '📖' },
+    { id: 'journey', label: 'Journey', shortLabel: 'Path', icon: '🗓️' },
+    { id: 'passion', label: 'Passion', shortLabel: 'Drive', icon: '❤️' }
   ];
 
   return (
@@ -30,25 +36,35 @@ export default function AboutSection() {
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
             About Me
           </h2>
-          <p className="text-lg text-gray-600">Get to know me better</p>
+          <p className="text-lg text-gray-600 mb-8">Software Developer focused on building useful, scalable products with clean architecture.</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
+            {quickStats.map((stat) => (
+              <div key={stat.label} className="rounded-2xl border border-white/50 bg-white/75 backdrop-blur-md py-4 px-4 shadow-lg">
+                <p className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{stat.value}</p>
+                <p className="text-xs sm:text-sm text-gray-600 font-medium mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Tabbed Content Section */}
         <div className="bg-white/70 backdrop-blur-xl rounded-3xl border border-white/40 shadow-2xl overflow-hidden">
           {/* Tab Navigation */}
-          <div className="flex border-b border-gray-200/50">
+          <div className="grid grid-cols-3 border-b border-gray-200/50">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 px-6 py-4 text-center font-semibold transition-all duration-300 relative ${
+                className={`px-2 sm:px-6 py-3 sm:py-4 text-center font-semibold transition-all duration-300 relative ${
                   activeTab === tab.id
                     ? 'text-blue-600'
                     : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50/50'
                 }`}
               >
-                <span className="text-xl mr-2">{tab.icon}</span>
-                {tab.label}
+                <span className="block text-lg sm:text-xl">{tab.icon}</span>
+                <span className="hidden sm:inline">{tab.label}</span>
+                <span className="sm:hidden text-xs">{tab.shortLabel}</span>
                 {activeTab === tab.id && (
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-purple-600"></div>
                 )}
@@ -57,9 +73,9 @@ export default function AboutSection() {
           </div>
 
           {/* Tab Content */}
-          <div className="p-8 md:p-12">
+          <div key={activeTab} className="p-8 md:p-12 animate-fade-in">
             {activeTab === 'story' && (
-              <div className="animate-fade-in">
+              <div>
                 <div className="flex flex-col md:flex-row gap-8 items-center">
                   {/* Professional Image */}
                   <div className="md:w-1/3">
@@ -81,17 +97,24 @@ export default function AboutSection() {
                   <div className="md:w-2/3 space-y-4">
                     <h3 className="text-3xl font-bold text-gray-800 mb-4">Hi, I'm Mahaveer! 👋</h3>
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      I'm a passionate <span className="font-semibold text-blue-600">Software Developer</span> pursuing B.Tech in Information Technology at 
-                      <span className="font-semibold"> Sri Eshwar College of Engineering</span> (2023–2027).
+                      I'm a passionate <span className="font-semibold text-blue-600">Software Developer</span> pursuing B.Tech in Information Technology at
+                      <span className="font-semibold"> Sri Eshwar College of Engineering</span> (2023-2027), focused on product-thinking and practical problem solving.
                     </p>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      My goal is to build <span className="font-semibold text-purple-600">impactful, scalable, and user-focused applications</span> that 
-                      blend creativity with clean architecture and solid engineering principles.
-                    </p>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      With hands-on experience in <span className="font-semibold">MERN, Flutter, and Next.js</span>, I enjoy turning complex ideas 
-                      into intuitive digital solutions. I'm also an active problem solver with <span className="font-semibold text-green-600">400+ coding challenges</span> solved!
-                    </p>
+
+                    <ul className="space-y-2">
+                      <li className="flex items-start text-gray-700">
+                        <span className="text-blue-600 mr-2 mt-1">▹</span>
+                        <span>Builds <span className="font-semibold text-purple-600">impactful, scalable, user-focused apps</span> with clean architecture.</span>
+                      </li>
+                      <li className="flex items-start text-gray-700">
+                        <span className="text-blue-600 mr-2 mt-1">▹</span>
+                        <span>Hands-on with <span className="font-semibold">MERN, Flutter, and Next.js</span> across web and mobile products.</span>
+                      </li>
+                      <li className="flex items-start text-gray-700">
+                        <span className="text-blue-600 mr-2 mt-1">▹</span>
+                        <span>Strong DSA foundation with <span className="font-semibold text-green-600">400+ coding problems solved</span>.</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
