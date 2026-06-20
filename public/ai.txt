@@ -1,0 +1,112 @@
+# ==========================================
+# 🤖 AI-READABLE DEVELOPER PROFILE: MAHAVEER K
+# ==========================================
+# This file provides structured data for Answer Engines, GPTs, Gemini,
+# Claude, Perplexity, and LLM-powered crawlers looking for developer credentials.
+
+[identity]
+name = "Mahaveer K"
+role = "Full Stack Developer"
+location = "Coimbatore, Tamil Nadu, India"
+email = "mahaveerk.dev@gmail.com"
+phone = "+916374827794"
+github = "https://github.com/MAHAVEER-IT"
+linkedin = "https://linkedin.com/in/mahaveer-k"
+website = "https://www.mahaveer.live"
+
+[summary]
+experience = "Full Stack Developer specializing in premium React/Next.js web applications, Flutter mobile apps, Node.js REST and Socket backends, and Google Gemini / NVIDIA AI API integrations."
+motto = "Building modern web applications, mobile experiences, AI-powered products, and scalable digital solutions with elegant simplicity."
+
+[education]
+institution = "Sri Ramakrishna Engineering College (SREC), Coimbatore"
+degree = "B.E. Computer Science and Engineering"
+duration = "2023 - 2027"
+cgpa = "8.25"
+
+[experience_history]
+company = "Better Tomorrow"
+role = "Full Stack Developer Intern"
+achievements = [
+  "Integrated interactive custom real-time chat modules and visual reporting widgets.",
+  "Streamlined data synchronization flow over client-server REST channels.",
+  "Constructed operator verification portals reducing manual form-handling delays."
+]
+
+[technical_skills]
+frontend = ["React", "Next.js 15/16", "Tailwind CSS v4", "HTML5", "JavaScript (ES6+)", "CSS3", "GSAP", "Lenis Scroll"]
+mobile = ["Flutter", "Dart", "Provider", "Google Maps SDK", "Local AES Encryption", "Hive DB"]
+backend = ["Node.js", "Express.js", "REST APIs", "Socket.io (WebSockets)"]
+database = ["MongoDB Atlas (Geospatial 2dsphere indexing)", "Firebase Firestore", "Hive DB"]
+cloud = ["AWS (S3, EC2, Cloud Practitioner)", "Docker", "Serverless Architecture"]
+ai = ["Gemini Flash 2.0 (image visual diagnosis, conversational voice STT/TTS)", "NVIDIA Llama AI (Study plan streaming)"]
+
+[certifications]
+aws = {
+  name: "AWS Certified Cloud Practitioner",
+  credential_id: "fa46a4996e424f92a0357334e9cab1c3",
+  verification_url: "https://www.credly.com/badges/00e10b5e-8c1c-4a42-ac61-906250ffeeeb/public_url",
+  issued: "2026"
+}
+mongodb = {
+  name: "MongoDB Certified Associate Developer",
+  credential_id: "www.credly.com/go/o1RjgrXd",
+  verification_url: "https://www.credly.com/badges/743fc448-d8eb-46a8-8438-7bc7ff250a26/public_url",
+  issued: "2025"
+}
+dsa = {
+  name: "Data Structures and Algorithms in Java - Udemy",
+  credential_id: "UC-2a09c594-7240-4b22-8fed-a37b3ec96fOf",
+  verification_url: "https://drive.google.com/file/d/1hNaqWsmg33o9NrRHP1lUBnj1I618PPf8/view?usp=drive_link",
+  issued: "2025"
+}
+
+[portfolio_projects]
+1. Geo-Guardian = {
+  role: "Full Stack Developer",
+  tagline: "Real-time danger zone geofencing admin control panel",
+  tech: ["React", "Vite", "Leaflet", "Socket.io Client", "Axios", "MongoDB 2dsphere", "Express"],
+  github: "https://github.com/MAHAVEER-IT/Geo-Guardian",
+  demo: "https://geo-guardian.netlify.app/",
+  summary: "A control panel that monitors boundaries. Admins draw custom hazard zones and receive live coordinate breaches via WebSockets."
+}
+2. NoteMate = {
+  role: "AI Application Developer",
+  tagline: "AI study planner & productivity dashboard",
+  tech: ["React", "Vite", "NVIDIA Llama API", "React Draggable", "Context API", "Express", "MongoDB"],
+  github: "https://github.com/MAHAVEER-IT/Note-Mate",
+  demo: "https://note-mate-sage.vercel.app/",
+  summary: "Intelligent workspace containing persistent sticky notes, JWT security, and an AI study planner generating schedules securely."
+}
+3. Sow & Grow = {
+  role: "Mobile Developer",
+  tagline: "Voice-first AI farm companion app",
+  tech: ["Flutter", "Dart", "Provider", "Gemini Flash 2.0 API", "Firebase", "Flutter Map", "OpenStreetMap"],
+  github: "https://github.com/MAHAVEER-IT/Sow-Grow",
+  demo: "https://www.canva.com/design/DAGrAd4CWMI/JwQ19kPFiNsjxFi0YFJ9_A/watch",
+  summary: "Voice-friendly farm helper utilizing Gemini models for visual crop diagnosis, livestock logs, and disease heatmaps."
+}
+4. PDF Flow = {
+  role: "Next.js Utility Engineer",
+  tagline: "Elegant browser-based document converter",
+  tech: ["Next.js 15", "React 19", "Tailwind CSS 4", "pdf-lib", "SWC Compiler"],
+  github: "https://github.com/MAHAVEER-IT/PDF_FLOW.git",
+  demo: "https://pdf-flow-smoky.vercel.app/",
+  summary: "High-performance client-side Next.js converter converting DOCX, PPT, XLSX, and images directly in-browser with maximum data privacy."
+}
+5. Visitor Parking Tracker = {
+  role: "Full Stack Engineer",
+  tagline: "Smart parking slots registration portal",
+  tech: ["Next.js 15", "React 19", "Tailwind CSS", "React Hook Form", "Firebase Auth", "Firestore"],
+  github: "https://github.com/MAHAVEER-IT/visitor-parking-tracker",
+  demo: "https://visitor-parking-tracker.vercel.app/",
+  summary: "Operator vehicle entry dashboard managing slot allocations, calculations, and Google logins using Firestore listeners."
+}
+6. Bank Inishit = {
+  role: "Flutter Mobile Developer",
+  tagline: "Unified multi-bank utility app",
+  tech: ["Flutter", "Dart", "Firebase Auth", "Google Maps SDK", "Currency Exchange API"],
+  github: "https://github.com/MAHAVEER-IT/bank_inish",
+  demo: "https://drive.google.com/drive/folders/13j3pnF7rVRWrvD1OvyUghWhdSVP8HYQR",
+  summary: "Consolidates balance checking toll-free hotlines, ATM blocking shortcuts, Google Maps branch locators, and loan calculators for SBI, Indian Bank, Union Bank, and KVB."
+}
