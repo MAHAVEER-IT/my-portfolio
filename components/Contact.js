@@ -64,8 +64,8 @@ export default function Contact() {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2">Get In Touch</span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-text font-heading">
+          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2 flex items-center gap-1.5 justify-center">Get In Touch</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-text font-heading flex items-center gap-2 justify-center">
             Let's Build Something Amazing Together
           </h2>
           <p className="text-base md:text-lg text-brand-text-muted mt-3 max-w-xl">
@@ -295,6 +295,13 @@ export default function Contact() {
 
         </div>
 
+      </div>
+
+      {/* Background Mountain Silhouette Decoration */}
+      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none z-0 select-none h-[120px] text-primary/5 dark:text-primary/2">
+        <svg viewBox="0 0 1440 120" className="w-full h-auto min-w-[1000px]" fill="currentColor">
+          <path d="M0 100 L300 40 L650 90 L950 30 L1250 80 L1440 50 L1440 120 L0 120 Z" />
+        </svg>
       </div>
     </section>
   );

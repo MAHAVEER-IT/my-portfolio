@@ -16,7 +16,7 @@ export default function Home() {
     "name": "Mahaveer K",
     "jobTitle": "Full Stack Developer",
     "url": "https://www.mahaveer.live",
-    "image": "https://www.mahaveer.live/images/MAHAVEER.png",
+    "image": "https://www.mahaveer.live/images/mahaveer_profile.png",
     "sameAs": [
       "https://github.com/MAHAVEER-IT",
       "https://linkedin.com/in/mahaveer-k"

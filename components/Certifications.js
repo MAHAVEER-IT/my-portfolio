@@ -12,8 +12,8 @@ const certifications = [
     date: "2025",
     credentialId: "www.credly.com/go/o1RjgrXd",
     url: "https://www.credly.com/badges/743fc448-d8eb-46a8-8438-7bc7ff250a26/public_url",
-    badgeColor: "hover:border-green-500/30",
-    glowColor: "rgba(16, 185, 129, 0.08)",
+    badgeColor: "hover:border-primary/30",
+    glowColor: "rgba(46, 125, 107, 0.08)",
     image: "/images/mongodb.png",
   },
   {
@@ -22,8 +22,8 @@ const certifications = [
     date: "2026",
     credentialId: "fa46a4996e424f92a0357334e9cab1c3",
     url: "https://www.credly.com/badges/00e10b5e-8c1c-4a42-ac61-906250ffeeeb/public_url",
-    badgeColor: "hover:border-orange-500/30",
-    glowColor: "rgba(249, 115, 22, 0.08)",
+    badgeColor: "hover:border-accent/30",
+    glowColor: "rgba(16, 185, 129, 0.08)",
     image: "/images/aws.png",
   },
   {
@@ -32,8 +32,8 @@ const certifications = [
     date: "2024",
     credentialId: "UC-2a09c594-7240-4b22-8fed-a37b3ec96fOf",
     url: "https://drive.google.com/file/d/1hNaqWsmg33o9NrRHP1lUBnj1I618PPf8/view?usp=drive_link",
-    badgeColor: "hover:border-purple-500/30",
-    glowColor: "rgba(168, 85, 247, 0.08)",
+    badgeColor: "hover:border-primary/30",
+    glowColor: "rgba(46, 125, 107, 0.08)",
     image: null,
   },
 ];

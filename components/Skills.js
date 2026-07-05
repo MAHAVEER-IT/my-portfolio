@@ -90,8 +90,8 @@ export default function Skills() {
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">
-          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2">Technical Proficiency</span>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-brand-text font-heading">
+          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2 flex items-center gap-1.5 justify-center">Technical Proficiency</span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-brand-text font-heading flex items-center gap-2 justify-center">
             Skills Showcase
           </h2>
         </div>
@@ -155,10 +155,10 @@ export default function Skills() {
                   {activeCategory.skills.map((skill) => {
                     const dotColor =
                       skill.status === "expert"
-                        ? "bg-green-500 shadow-green-500/40"
+                        ? "bg-primary shadow-primary/40"
                         : skill.status === "advanced"
-                        ? "bg-blue-500 shadow-blue-500/40"
-                        : "bg-amber-500 shadow-amber-500/40";
+                        ? "bg-accent shadow-accent/40"
+                        : "bg-brand-text-muted/50 shadow-brand-text-muted/20";
 
                     return (
                       <div
@@ -183,6 +183,13 @@ export default function Skills() {
           </div>
 
         </div>
+      </div>
+
+      {/* Background Leaf Silhouette Decoration */}
+      <div className="absolute bottom-4 left-4 w-[120px] h-[120px] text-primary/5 dark:text-primary/2 pointer-events-none select-none z-0">
+        <svg viewBox="0 0 100 100" className="w-full h-full" fill="currentColor">
+          <path d="M50 15 C40 30, 20 40, 50 85 C80 40, 60 30, 50 15 Z" />
+        </svg>
       </div>
     </section>
   );

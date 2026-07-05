@@ -39,7 +39,7 @@ export default function Achievements() {
             className="md:col-span-2 group relative p-8 sm:p-10 rounded-[32px] border border-brand-border bg-brand-card shadow-brand hover:shadow-brand-hover hover:border-primary/20 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[350px]"
           >
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10 w-full">
               {/* Card Details (8 Cols on desktop) */}
@@ -76,14 +76,14 @@ export default function Achievements() {
                   <svg viewBox="0 0 100 40" className="w-full h-16 overflow-visible">
                     <defs>
                       <linearGradient id="chart-glow" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#2563EB" stopOpacity="0.2"/>
-                        <stop offset="100%" stopColor="#2563EB" stopOpacity="0"/>
+                        <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.2"/>
+                        <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0"/>
                       </linearGradient>
                     </defs>
                     <path
                       d="M0 35 Q 20 20, 40 28 T 80 10 T 100 5"
                       fill="none"
-                      stroke="#2563EB"
+                      stroke="var(--color-primary)"
                       strokeWidth="2"
                       className="path-animate"
                       style={{
@@ -95,8 +95,8 @@ export default function Achievements() {
                       d="M0 35 Q 20 20, 40 28 T 80 10 T 100 5 L 100 40 L 0 40 Z"
                       fill="url(#chart-glow)"
                     />
-                    <circle cx="100" cy="5" r="3" fill="#06B6D4" className="animate-ping" />
-                    <circle cx="100" cy="5" r="2" fill="#2563EB" />
+                    <circle cx="100" cy="5" r="3" fill="var(--color-accent)" className="animate-ping" />
+                    <circle cx="100" cy="5" r="2" fill="var(--color-primary)" />
                   </svg>
 
                   <div className="flex justify-between items-center text-xs font-bold text-brand-text">
@@ -118,7 +118,7 @@ export default function Achievements() {
             className="group relative p-8 sm:p-10 rounded-[32px] border border-brand-border bg-brand-card shadow-brand hover:shadow-brand-hover hover:border-primary/20 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[350px]"
           >
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
             <div className="relative z-10 flex flex-col h-full justify-between gap-6">
               <div className="flex justify-between items-start">
@@ -148,7 +148,7 @@ export default function Achievements() {
                     cy="18"
                     r="15.915"
                     fill="none"
-                    stroke="#2563EB"
+                    stroke="var(--color-primary)"
                     strokeWidth="3.5"
                     strokeDasharray="72 28"
                     strokeDashoffset="25"
@@ -176,7 +176,7 @@ export default function Achievements() {
             className="group relative p-8 sm:p-10 rounded-[32px] border border-brand-border bg-brand-card shadow-brand hover:shadow-brand-hover hover:border-primary/20 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[350px]"
           >
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
             <div className="relative z-10 flex flex-col h-full justify-between gap-6">
               <div className="flex justify-between items-start">
@@ -223,7 +223,7 @@ export default function Achievements() {
             className="md:col-span-2 group relative p-8 sm:p-10 rounded-[32px] border border-brand-border bg-brand-card shadow-brand hover:shadow-brand-hover hover:border-primary/20 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[350px]"
           >
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10 w-full">
               {/* Card Details (7 Cols) */}
@@ -296,7 +296,7 @@ export default function Achievements() {
                       </div>
                       <div className="w-full h-1.5 rounded-full bg-brand-border overflow-hidden">
                         <motion.div 
-                          className="h-full bg-cyan-500 rounded-full" 
+                          className="h-full bg-accent rounded-full" 
                           initial={{ width: 0 }}
                           whileInView={{ width: "88%" }}
                           viewport={{ once: true }}

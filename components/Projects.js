@@ -98,8 +98,8 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2">My Work</span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-text font-heading">
+          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2 flex items-center gap-1.5 justify-center">My Work</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-text font-heading flex items-center gap-2 justify-center">
             Featured Projects
           </h2>
           <p className="text-base md:text-lg text-brand-text-muted mt-3 max-w-xl">
@@ -154,6 +154,7 @@ export default function Projects() {
                           src={project.image}
                           alt={project.name}
                           fill
+                          priority={index < 4}
                           className="object-cover scale-[1.01] group-hover:scale-[1.05] transition-transform duration-700"
                           sizes="(max-width: 1024px) 100vw, 750px"
                         />
@@ -230,6 +231,13 @@ export default function Projects() {
             })}
           </AnimatePresence>
         </div>
+      </div>
+
+      {/* Background Mountain Silhouette Decoration */}
+      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none z-0 select-none h-[120px] text-primary/5 dark:text-primary/2">
+        <svg viewBox="0 0 1440 120" className="w-full h-auto min-w-[1000px]" fill="currentColor">
+          <path d="M0 80 L200 40 L450 90 L700 30 L950 80 L1200 40 L1440 70 L1440 120 L0 120 Z" />
+        </svg>
       </div>
     </section>
   );

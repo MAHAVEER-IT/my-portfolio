@@ -87,7 +87,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
-        <a href="#home" className="text-xl font-bold tracking-tight text-brand-text font-heading cursor-pointer">
+        <a href="#home" className="text-xl font-bold tracking-tight text-brand-text font-heading cursor-pointer flex items-center gap-1.5">
           MAHAVEER <span className="text-primary font-light">K</span>
         </a>
 

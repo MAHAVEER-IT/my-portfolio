@@ -295,6 +295,9 @@ export async function generateMetadata({ params }) {
   return {
     title: project.name,
     description: project.tagline,
+    alternates: {
+      canonical: `https://www.mahaveer.live/projects/${id}`,
+    },
     openGraph: {
       title: `${project.name} | Mahaveer K`,
       description: project.tagline,

@@ -76,8 +76,8 @@ export default function CursorGlow() {
           }}
           animate={{
             scale: hovered ? 1.5 : 1,
-            backgroundColor: hovered ? "rgba(37, 99, 235, 0.08)" : "rgba(37, 99, 235, 0)",
-            borderColor: hovered ? "rgba(37, 99, 235, 0.8)" : "rgba(37, 99, 235, 0.4)",
+            backgroundColor: hovered ? "rgba(46, 125, 107, 0.08)" : "rgba(46, 125, 107, 0)",
+            borderColor: hovered ? "rgba(46, 125, 107, 0.8)" : "rgba(46, 125, 107, 0.4)",
           }}
           transition={{ type: "spring", stiffness: 350, damping: 25 }}
         />

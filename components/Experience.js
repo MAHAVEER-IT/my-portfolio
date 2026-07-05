@@ -44,8 +44,8 @@ export default function Experience() {
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2">Professional Path</span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-text font-heading">
+          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2 flex items-center gap-1.5 justify-center">Professional Path</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-text font-heading flex items-center gap-2 justify-center">
             Experience Timeline
           </h2>
           <p className="text-base md:text-lg text-brand-text-muted mt-3 max-w-xl">
@@ -140,6 +140,13 @@ export default function Experience() {
             </motion.div>
           ))}
         </div>
+      </div>
+
+      {/* Background Mountain Silhouette Decoration */}
+      <div className="absolute bottom-0 right-0 w-[300px] h-[150px] text-primary/5 dark:text-primary/2 pointer-events-none select-none z-0">
+        <svg viewBox="0 0 300 150" className="w-full h-full" fill="currentColor">
+          <path d="M0 150 L80 90 L150 120 L230 70 L300 110 L300 150 Z" />
+        </svg>
       </div>
     </section>
   );

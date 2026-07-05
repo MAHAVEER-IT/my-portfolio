@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAFBFC;
+  --background: #F3F5F4;
   --card-bg: #FFFFFF;
-  --card-border: #E2E8F0;
-  --text-primary: #020617;
-  --text-secondary: #64748B;
-  --nav-bg: rgba(250, 251, 252, 0.7);
-  --shadow-color: rgba(15, 23, 42, 0.05);
-  --accent-glow: rgba(37, 99, 235, 0.03);
-  --gradient-from: rgba(37, 99, 235, 0.04);
-  --gradient-to: rgba(6, 182, 212, 0.04);
-  --cursor-color: rgba(37, 99, 235, 0.15);
+  --card-border: #E1E6E4;
+  --text-primary: #113A30;
+  --text-secondary: #3B6B5F;
+  --nav-bg: rgba(243, 245, 244, 0.75);
+  --shadow-color: rgba(26, 47, 43, 0.04);
+  --accent-glow: rgba(46, 125, 107, 0.04);
+  --gradient-from: rgba(46, 125, 107, 0.05);
+  --gradient-to: rgba(16, 185, 129, 0.03);
+  --cursor-color: rgba(46, 125, 107, 0.12);
 }
 
 .dark {
-  --background: #090D1A;
-  --card-bg: #111827;
-  --card-border: #1F2937;
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --nav-bg: rgba(9, 13, 26, 0.7);
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  --accent-glow: rgba(6, 182, 212, 0.08);
-  --gradient-from: rgba(37, 99, 235, 0.06);
-  --gradient-to: rgba(6, 182, 212, 0.06);
-  --cursor-color: rgba(6, 182, 212, 0.2);
+  --background: #0B1311;
+  --card-bg: #121E1B;
+  --card-border: #1E312D;
+  --text-primary: #D1EAE2;
+  --text-secondary: #74A295;
+  --nav-bg: rgba(11, 19, 17, 0.75);
+  --shadow-color: rgba(0, 0, 0, 0.25);
+  --accent-glow: rgba(16, 185, 129, 0.06);
+  --gradient-from: rgba(46, 125, 107, 0.07);
+  --gradient-to: rgba(16, 185, 129, 0.05);
+  --cursor-color: rgba(16, 185, 129, 0.15);
 }
 
 @theme {
@@ -33,9 +33,9 @@
   --font-heading: var(--font-space-grotesk), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
 
-  --color-primary: #2563EB;
-  --color-secondary: #0F172A;
-  --color-accent: #06B6D4;
+  --color-primary: #2E7D6B;
+  --color-secondary: #121E1B;
+  --color-accent: #10B981;
   --color-success: #10B981;
 
   --color-brand-bg: var(--background);
@@ -90,6 +90,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  color: var(--color-primary);
 }
 
 code, pre {

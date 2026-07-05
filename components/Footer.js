@@ -14,7 +14,14 @@ export default function Footer() {
             &copy; {currentYear === 2027 ? "2027" : `2025 - ${currentYear}`} Mahaveer K. All rights reserved.
           </p>
           <p className="text-xs text-brand-text-muted/70 flex items-center gap-1">
-            Engineered with <Heart size={10} className="text-red-500 fill-red-500" /> in Coimbatore, TN.
+            Engineered with <Heart size={10} className="text-primary fill-primary" /> in Coimbatore, TN.
+          </p>
+        </div>
+
+        {/* Center: Nature Note */}
+        <div className="text-center max-w-[320px] py-2 md:py-0">
+          <p className="text-xs text-brand-text-secondary italic leading-relaxed">
+            Inspired by the calm mist of hill stations and the silent strength of evergreen forests.
           </p>
         </div>
 

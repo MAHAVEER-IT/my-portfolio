@@ -23,6 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://www.mahaveer.live"),
+  alternates: {
+    canonical: "https://www.mahaveer.live",
+  },
   title: {
     default: "Mahaveer K | Full Stack Developer",
     template: "%s | Mahaveer K",
@@ -65,7 +68,7 @@ export const metadata = {
     siteName: "Mahaveer K Portfolio",
     images: [
       {
-        url: "/images/MAHAVEER.png",
+        url: "/images/mahaveer_profile.png",
         width: 1200,
         height: 630,
         alt: "Mahaveer K | Full Stack Developer",
@@ -76,7 +79,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Mahaveer K | Full Stack Developer",
     description: "Portfolio of Mahaveer K, showcasing web, mobile, and AI application designs.",
-    images: ["/images/MAHAVEER.png"],
+    images: ["/images/mahaveer_profile.png"],
   },
 };
 
@@ -96,6 +99,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

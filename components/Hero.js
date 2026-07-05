@@ -6,20 +6,29 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Code, FileText } from "lucide-react";
 import { Github, Linkedin } from "@/components/Icons";
 
-// Orbiting Tech Badges Configuration
-const techBadges = [
-  { name: "React", icon: "⚛️", orbit: 1, position: "top" },
-  { name: "Next.js", icon: "▲", orbit: 1, position: "bottom" },
-  { name: "Node.js", icon: "🟢", orbit: 2, position: "left" },
-  { name: "Firebase", icon: "🔥", orbit: 2, position: "right" },
-  { name: "Flutter", icon: "💙", orbit: 3, position: "top-left" },
-  { name: "MongoDB", icon: "🍃", orbit: 3, position: "bottom-right" },
-];
+
 
 export default function Hero() {
-  const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mounted, setMounted] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    setIsDark(document.documentElement.classList.contains("dark"));
+
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   // Subtle parallax shift variables
   // (No complex spring transforms needed for clean organic float)
@@ -39,127 +48,7 @@ export default function Hero() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Background Interactive Grid/Particles Canvas
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
-    let animationFrameId;
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
-    };
-    window.addEventListener("resize", handleResize);
-
-    // Particle class
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.size = Math.random() * 2 + 1;
-        this.baseSpeedX = Math.random() * 0.4 - 0.2;
-        this.baseSpeedY = Math.random() * 0.4 - 0.2;
-        this.speedX = this.baseSpeedX;
-        this.speedY = this.baseSpeedY;
-      }
-
-      update(mouseNormalizedX, mouseNormalizedY) {
-        // Particles drift slightly based on mouse
-        this.speedX = this.baseSpeedX + mouseNormalizedX * 0.3;
-        this.speedY = this.baseSpeedY + mouseNormalizedY * 0.3;
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        // Wrap around borders
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-        if (this.y < 0) this.y = height;
-        if (this.y > height) this.y = 0;
-      }
-
-      draw() {
-        ctx.fillStyle = document.documentElement.classList.contains("dark")
-          ? "rgba(6, 182, 212, 0.15)"
-          : "rgba(37, 99, 235, 0.12)";
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    const particlesCount = Math.min(60, Math.floor((width * height) / 15000));
-    const particles = Array.from({ length: particlesCount }, () => new Particle());
-
-    // Animation Loop
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // 1. Draw subtle moving grid that reacts to mouse
-      ctx.strokeStyle = document.documentElement.classList.contains("dark")
-        ? "rgba(255, 255, 255, 0.015)"
-        : "rgba(148, 163, 184, 0.05)";
-      ctx.lineWidth = 1;
-
-      const gridSize = 50;
-      const offsetX = mousePos.x * 15;
-      const offsetY = mousePos.y * 15;
-
-      for (let x = offsetX % gridSize; x < width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
-        ctx.stroke();
-      }
-
-      for (let y = offsetY % gridSize; y < height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
-        ctx.stroke();
-      }
-
-      // 2. Draw and connect particles
-      particles.forEach((particle) => {
-        particle.update(mousePos.x, mousePos.y);
-        particle.draw();
-      });
-
-      // Draw connections
-      ctx.lineWidth = 0.5;
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 100) {
-            const alpha = (1 - dist / 100) * 0.15;
-            ctx.strokeStyle = document.documentElement.classList.contains("dark")
-              ? `rgba(6, 182, 212, ${alpha})`
-              : `rgba(37, 99, 235, ${alpha})`;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [mousePos]);
 
   return (
     <section
@@ -167,8 +56,18 @@ export default function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 md:px-12 bg-brand-bg bg-grid-pattern/30 overflow-hidden"
     >
-      {/* Dynamic Background Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none z-0" />
+      {/* Background Hero Image */}
+      <div className="absolute inset-0 z-0 opacity-[0.6] dark:opacity-[0.06] pointer-events-none select-none mix-blend-multiply dark:mix-blend-screen">
+        <Image
+          src="/images/misty_mountain_backdrop.png"
+          alt="Misty Mountain Backdrop"
+          fill
+          priority
+          className="object-cover"
+        />
+      </div>
+
+
 
       {/* Decorative Blur Spheres */}
       <div className="absolute top-[20%] left-[10%] w-[350px] h-[350px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[100px] pointer-events-none animate-pulse-slow z-0" />
@@ -322,77 +221,20 @@ export default function Hero() {
               {/* Background Glow Sphere (Shadow) */}
               <div className="absolute inset-4 rounded-full bg-primary/8 dark:bg-primary/15 blur-[50px] -z-10" />
 
-              {/* Dynamic Concentric Orbits & Badges */}
-              {[1, 2, 3].map((orbitNum) => {
-                const isDashed = orbitNum !== 2;
-                const borderClass = isDashed 
-                  ? "border-dashed border-primary/20 dark:border-primary/10" 
-                  : "border-solid border-brand-border/40 dark:border-brand-border/20";
-                
-                // Outer ring sizing (responsive offsets)
-                const insetClass = orbitNum === 1 
-                  ? "inset-[-6%]" 
-                  : orbitNum === 2 
-                  ? "inset-[-20%]" 
-                  : "inset-[-34%]";
-                
-                const speed = orbitNum === 1 ? 25 : orbitNum === 2 ? 35 : 45;
-                const direction = orbitNum === 2 ? -1 : 1;
-                
-                const badgesInOrbit = techBadges.filter(b => b.orbit === orbitNum);
-
-                return (
-                  <motion.div
-                    key={orbitNum}
-                    className={`absolute ${insetClass} rounded-full border pointer-events-none z-0 ${borderClass}`}
-                    animate={{ rotate: direction * 360 }}
-                    transition={{
-                      duration: speed,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  >
-                    {badgesInOrbit.map((badge) => {
-                      let positionClass = "";
-                      if (badge.position === "top") positionClass = "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2";
-                      else if (badge.position === "bottom") positionClass = "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2";
-                      else if (badge.position === "left") positionClass = "top-1/2 left-0 -translate-x-1/2 -translate-y-1/2";
-                      else if (badge.position === "right") positionClass = "top-1/2 right-0 translate-x-1/2 -translate-y-1/2";
-                      else if (badge.position === "top-left") positionClass = "top-[14.6%] left-[14.6%] -translate-x-1/2 -translate-y-1/2";
-                      else if (badge.position === "bottom-right") positionClass = "top-[85.4%] left-[85.4%] -translate-x-1/2 -translate-y-1/2";
-
-                      return (
-                        <div key={badge.name} className={`absolute ${positionClass} pointer-events-auto`}>
-                          <motion.div
-                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-brand-border glass shadow-brand cursor-default text-xs sm:text-sm font-medium text-brand-text"
-                            animate={{ rotate: -direction * 360 }}
-                            transition={{
-                              duration: speed,
-                              repeat: Infinity,
-                              ease: "linear",
-                            }}
-                            whileHover={{ scale: 1.06, borderColor: "rgba(37, 99, 235, 0.4)" }}
-                          >
-                            <span>{badge.icon}</span>
-                            <span>{badge.name}</span>
-                          </motion.div>
-                        </div>
-                      );
-                    })}
-                  </motion.div>
-                );
-              })}
-              
               {/* Center Image Container */}
               <div className="w-full h-full rounded-full border-4 border-white dark:border-[#111827] shadow-2xl overflow-hidden relative z-10 bg-brand-card hover:scale-[1.02] transition-transform duration-500">
-                <Image
-                  src="/images/MAHAVEER.png"
-                  alt="Mahaveer K"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 420px"
-                />
+                {mounted ? (
+                  <Image
+                    src={isDark ? "/images/mahaveer_profile_dark.png" : "/images/mahaveer_profile.png"}
+                    alt="Mahaveer K"
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 420px"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-brand-border/40 animate-pulse" />
+                )}
               </div>
             </motion.div>
           </motion.div>

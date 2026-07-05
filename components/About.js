@@ -55,8 +55,8 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-start mb-16 md:mb-20">
-          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2">About Me</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-text font-heading leading-tight">
+          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2 flex items-center gap-1.5">About Me</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-text font-heading leading-tight flex items-center gap-2">
             Who Am I?
           </h2>
         </div>
@@ -113,7 +113,7 @@ export default function About() {
           <div className="lg:col-span-6 relative pl-6 sm:pl-8">
             
             {/* Timeline Vertical Track Line */}
-            <div className="absolute left-[27px] sm:left-[35px] top-4 bottom-4 w-[2px] bg-brand-border dark:bg-brand-border/40" />
+            <div className="absolute left-[27px] sm:left-[35px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-primary via-primary/40 to-brand-border/20" />
             
             {/* Timeline Nodes */}
             <div className="flex flex-col gap-10 relative">
