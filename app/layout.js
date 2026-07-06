@@ -2,6 +2,7 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CursorGlow from "@/components/CursorGlow";
+import Chatbot from "@/components/Chatbot";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -108,6 +109,7 @@ export default function RootLayout({ children }) {
         <SmoothScroll>
           <CursorGlow />
           {children}
+          <Chatbot />
         </SmoothScroll>
       </body>
     </html>
