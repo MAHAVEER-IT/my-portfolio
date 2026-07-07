@@ -27,7 +27,8 @@ function cosineSimilarity(vecA, vecB) {
 const CONTACT_DETAILS_FALLBACK = (
   "\n\nIf you want to discuss opportunities, collaborate on a project, or contact me directly, " +
   "feel free to reach out via:\n" +
-  "- **Email**: [mahaveer.k2023it@sece.ac.in](mailto:mahaveer.k2023it@sece.ac.in)\n" +
+  "- **Primary Email**: [mahaveerk.dev@gmail.com](mailto:mahaveerk.dev@gmail.com)\n" +
+  "- **Secondary Email**: [mahaveer.k2023it@sece.ac.in](mailto:mahaveer.k2023it@sece.ac.in)\n" +
   "- **Phone**: +91 63748 27794\n" +
   "- **LinkedIn**: [linkedin.com/in/mahaveer-k](https://linkedin.com/in/mahaveer-k)\n" +
   "- **GitHub**: [github.com/MAHAVEER-IT](https://github.com/MAHAVEER-IT)\n" +
