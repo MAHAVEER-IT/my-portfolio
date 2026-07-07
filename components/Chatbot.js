@@ -258,7 +258,7 @@ export default function Chatbot() {
         ...prev,
         {
           role: "assistant",
-          content: "Sorry, I encountered an issue communicating with the AI service. Please verify that the GEMINI_API_KEY is configured in your environment.",
+          content: "Sorry, I'm having trouble connecting right now. Please try again later.",
           error: true,
         },
       ]);
@@ -378,7 +378,7 @@ export default function Chatbot() {
                         {msg.error && (
                           <div className="flex items-center gap-1.5 mt-2.5 text-[10px] font-semibold text-red-500">
                             <AlertCircle size={12} />
-                            <span>Check server configuration</span>
+                            <span>Connection error</span>
                           </div>
                         )}
 
