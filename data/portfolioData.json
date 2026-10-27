@@ -1,0 +1,521 @@
+{
+  "personal": {
+    "name": "Mahaveer K",
+    "greeting": "Hello, I am",
+    "title": "Full Stack Developer",
+    "role": "Full Stack Developer & AI Product Builder",
+    "tagline": "Building scalable web apps, mobile solutions, and playful digital experiences.",
+    "availability": "Available for Opportunities",
+    "badge": "LABS.DEV",
+    "stackSummary": "STACK: NEXT.JS • FLUTTER • AWS",
+    "location": {
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "formatted": "Coimbatore, Tamil Nadu"
+    },
+    "contact": {
+      "email": "mahaveerk.dev@gmail.com",
+      "secondaryEmail": "mahaveer.k2023it@sece.ac.in",
+      "phone": "+91 63748 27794",
+      "phoneClean": "+916374827794",
+      "website": "https://www.mahaveer.live"
+    },
+    "socials": {
+      "github": "https://github.com/MAHAVEER-IT",
+      "linkedin": "https://linkedin.com/in/mahaveer-k",
+      "resume": "https://drive.google.com/file/d/1qLrF_P4qrPCr9tN_aykdFe7yUi11Kkzm/view?usp=sharing"
+    },
+    "images": {
+      "avatar": "/images/mahaveer_profile.png",
+      "avatarDark": "/images/mahaveer_profile_dark.png",
+      "logo": "/images/MAHAVEER.png",
+      "backdrop": "/images/misty_mountain_backdrop.png",
+      "background": "/images/misty_mountain_background.png"
+    },
+    "bio": {
+      "headline": "A passionate software engineer blending design and performance.",
+      "summary": "I am a final-year B.Tech Information Technology student at Sri Eshwar College of Engineering. I possess a deep passion for building scalable software systems, modern web applications, AI-integrated workflows, and high-fidelity mobile experiences.",
+      "philosophy": "I focus on writing clean code, optimizing backend systems, and crafting responsive user interfaces that deliver delightful digital stories. My approach is centered on 'Elegant Simplicity'—stripping away clutter to emphasize performance and value.",
+      "natureNote": "Inspired by the warm glow of lantern festivals and the quiet grace of blooming cherry blossoms."
+    }
+  },
+  "education": {
+    "college": {
+      "degree": "Bachelor of Technology (B.Tech) in Information Technology",
+      "institution": "Sri Eshwar College of Engineering (SECE)",
+      "location": "Coimbatore, Tamil Nadu, India",
+      "period": "2023 – 2027",
+      "cgpa": "7.81",
+      "curriculum": [
+        "Full Stack Web Development using the MERN Stack",
+        "Modern Frontend Development with React, Next.js, HTML, CSS, and JavaScript",
+        "Mobile Application Development using Flutter & Dart",
+        "Backend Development using Node.js and Express.js",
+        "Database Management with MongoDB and Firebase",
+        "Data Structures and Algorithms using C++",
+        "REST API Development and Integration",
+        "Version Control using Git and GitHub",
+        "Cloud Deployment using platforms like Vercel and Render"
+      ]
+    },
+    "schooling": [
+      {
+        "degree": "Higher Secondary Certificate (HSC)",
+        "institution": "Palaniyammal Higher Secondary School",
+        "period": "2022 – 2023",
+        "score": "84.6%",
+        "focus": "Mathematics, Physics, and Computer Science"
+      },
+      {
+        "degree": "Secondary School Leaving Certificate (SSLC)",
+        "institution": "Palaniyammal Higher Secondary School",
+        "period": "2021 – 2022",
+        "focus": "Core academic discipline, mathematics, science, and logical reasoning"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "year": "2023",
+      "title": "Started Engineering",
+      "description": "B.Tech in Information Technology at Sri Eshwar College of Engineering. Commenced journey into algorithms, computer systems, and full-stack development foundations.",
+      "category": "education"
+    },
+    {
+      "year": "2025",
+      "title": "Internship at Better Tomorrow",
+      "description": "Joined as a Full Stack Developer Intern. Spearheaded AI integration projects and developed production-ready Next.js & MERN products.",
+      "category": "work"
+    },
+    {
+      "year": "2025",
+      "title": "Built Multiple Real-world Products",
+      "description": "Authored & launched scalable apps (Geo-Guardian, NoteMate, Sow & Grow) resolving concrete real-world pain points.",
+      "category": "project"
+    },
+    {
+      "year": "2027",
+      "title": "Graduation",
+      "description": "Completed B.Tech. Embarking on full-time engineering career to deploy scalable AI systems and high-fidelity interfaces.",
+      "category": "education"
+    }
+  ],
+  "specializations": [
+    {
+      "name": "MERN Stack Development",
+      "desc": "Building full-stack web architectures with React, Node, Express, and MongoDB."
+    },
+    {
+      "name": "Next.js & App Router",
+      "desc": "Structuring highly optimized, server-rendered web applications with premium transitions."
+    },
+    {
+      "name": "Mobile Development (Flutter)",
+      "desc": "Crafting compiled native iOS and Android apps using single-codebase Flutter framework."
+    },
+    {
+      "name": "AI Integration & Product Design",
+      "desc": "Embedding LLMs, vector search engines, and prompt engineering paradigms into core services."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Better Tomorrow",
+      "role": "Full Stack Developer Intern",
+      "period": "Feb 2025 – Mar 2025",
+      "location": "Remote / Hybrid",
+      "description": "Developed and shipped AI-integrated products, focusing on MERN stack architecture, modern React frontends, and API performance.",
+      "highlights": [
+        {
+          "title": "Built AI-Powered NoteMate",
+          "desc": "Designed and engineered NoteMate, an intelligent note-taking app that automatically structures meeting logs and generates actionable follow-ups."
+        },
+        {
+          "title": "OpenAI Integration",
+          "desc": "Integrated OpenAI's GPT models via streaming APIs to execute semantic search and produce context-aware summarizations."
+        },
+        {
+          "title": "MERN Stack Development",
+          "desc": "Refactored Express.js routes and MongoDB schemas to reduce query latency by 20% and establish robust model relationships."
+        },
+        {
+          "title": "Deployment & Infrastructure",
+          "desc": "Set up CI/CD pipelines to build and deploy frontend assets on Vercel and background services on Render, securing 99.9% uptime."
+        }
+      ],
+      "tech": ["React", "Node.js", "Express.js", "MongoDB", "OpenAI API", "Vercel", "Render", "Tailwind CSS"]
+    }
+  ],
+  "skills": [
+    {
+      "id": "frontend",
+      "category": "Frontend",
+      "skills": [
+        { "name": "React", "level": "Expert", "status": "expert" },
+        { "name": "Next.js", "level": "Expert", "status": "expert" },
+        { "name": "HTML5 & CSS3", "level": "Expert", "status": "expert" },
+        { "name": "Tailwind CSS", "level": "Expert", "status": "expert" }
+      ]
+    },
+    {
+      "id": "backend",
+      "category": "Backend",
+      "skills": [
+        { "name": "Node.js", "level": "Expert", "status": "expert" },
+        { "name": "Express.js", "level": "Expert", "status": "expert" },
+        { "name": "REST APIs", "level": "Expert", "status": "expert" }
+      ]
+    },
+    {
+      "id": "mobile",
+      "category": "Mobile",
+      "skills": [
+        { "name": "Flutter", "level": "Advanced", "status": "advanced" },
+        { "name": "Dart", "level": "Advanced", "status": "advanced" }
+      ]
+    },
+    {
+      "id": "database",
+      "category": "Database",
+      "skills": [
+        { "name": "MongoDB", "level": "Expert", "status": "expert" },
+        { "name": "Firebase", "level": "Expert", "status": "expert" }
+      ]
+    },
+    {
+      "id": "tools",
+      "category": "Tools & DevOps",
+      "skills": [
+        { "name": "Git & GitHub", "level": "Advanced", "status": "advanced" },
+        { "name": "Postman", "level": "Expert", "status": "expert" },
+        { "name": "Docker", "level": "Intermediate", "status": "intermediate" },
+        { "name": "VS Code", "level": "Expert", "status": "expert" },
+        { "name": "Android Studio", "level": "Advanced", "status": "advanced" }
+      ]
+    },
+    {
+      "id": "core",
+      "category": "Core & Algorithms",
+      "skills": [
+        { "name": "Data Structures", "level": "Advanced", "status": "advanced" },
+        { "name": "Algorithms", "level": "Advanced", "status": "advanced" },
+        { "name": "DBMS Core", "level": "Advanced", "status": "advanced" },
+        { "name": "C++", "level": "Proficient", "status": "proficient" }
+      ]
+    },
+    {
+      "id": "cloud",
+      "category": "Cloud & Deployment",
+      "skills": [
+        { "name": "Vercel", "level": "Advanced", "status": "advanced" },
+        { "name": "Render", "level": "Advanced", "status": "advanced" },
+        { "name": "AWS Cloud", "level": "Certified", "status": "certified" }
+      ]
+    },
+    {
+      "id": "ai",
+      "category": "AI & Modern APIs",
+      "skills": [
+        { "name": "OpenAI GPT Models", "level": "Advanced", "status": "advanced" },
+        { "name": "Google Gemini 2.0 Flash", "level": "Advanced", "status": "advanced" },
+        { "name": "NVIDIA NIM / Llama 3", "level": "Advanced", "status": "advanced" },
+        { "name": "Vector Search & Embeddings", "level": "Intermediate", "status": "intermediate" }
+      ]
+    }
+  ],
+  "projectCategories": ["All", "Full Stack", "AI", "Mobile", "Utility"],
+  "projects": [
+    {
+      "id": "geo-guardian",
+      "name": "Geo-Guardian",
+      "tagline": "Real-time danger zone management platform",
+      "category": "Full Stack",
+      "description": "A geospatial safety system designed to monitor, create, and manage danger zones in real-time. Features an interactive Leaflet control panel for administrators to draw boundary maps and receive instant connection alerts from mobile clients.",
+      "image": "/images/geo_guardian.jpg",
+      "tech": ["React", "Vite", "Leaflet", "React Leaflet", "Leaflet Draw", "Socket.io Client", "Axios", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas (2dsphere)"],
+      "liveUrl": "https://geo-guardian.netlify.app/",
+      "githubUrl": "https://github.com/MAHAVEER-IT/Geo-Guardian",
+      "challenge": "Managing danger zones on physical maps and broadcasting real-time safety alerts to tourists and operators requires a robust bidirectional socket bridge and high-performance spatial calculation indices.",
+      "solution": "Created a React + Leaflet control panel integrated with Leaflet Draw for active polygon editing, bound to a Node.js + Express backend. Submissions utilize geospatial index structures in MongoDB Atlas (2dsphere index) to compute coordinate proximity and push triggers instantly via Socket.io.",
+      "highlights": [
+        "Draw and modify custom danger zones using an interactive Leaflet Draw polygon interface.",
+        "Real-time GPS coordinate logging and location searching utilizing Nominatim API integration.",
+        "Sub-100ms toast notifications and alerts triggered on mobile boundary breaches via Socket.io Client."
+      ],
+      "architecture": [
+        { "name": "React & Leaflet UI", "desc": "Renders interactive maps, allows administrators to draw danger zone boundaries, and handles Nominatim search." },
+        { "name": "Socket.io Bridge", "desc": "Coordinates live, bi-directional socket relays between admin dashboards and the mobile client ecosystem." },
+        { "name": "Node.js & Express API", "desc": "Processes REST endpoints, validates inputs, and queries geospatial datasets." },
+        { "name": "MongoDB Atlas (2dsphere)", "desc": "Stores coordinates as GeoJSON polygons with 2dsphere indexes for rapid distance/point intersections." }
+      ],
+      "code": "// Express endpoint to check if a user is inside any danger zone using MongoDB 2dsphere index\nconst Zone = require('../models/Zone');\n\nrouter.post('/check-location', async (req, res) => {\n  const { longitude, latitude } = req.body;\n\n  try {\n    const activeZone = await Zone.findOne({\n      geometry: {\n        $geoIntersects: {\n          $geometry: {\n            type: 'Point',\n            coordinates: [longitude, latitude]\n          }\n        }\n      }\n    });\n\n    if (activeZone) {\n      return res.json({ status: 'inside', zone: activeZone.name, alert: true });\n    }\n    return res.json({ status: 'safe', alert: false });\n  } catch (err) { \n    res.status(500).json({ error: 'Geospatial calculation failed' });\n  }\n});"
+    },
+    {
+      "id": "note-mate",
+      "name": "NoteMate",
+      "tagline": "AI study planner & productivity dashboard",
+      "category": "AI",
+      "description": "An intelligent workspace featuring draggable sticky notes, note categorization, JWT session credentials, and an AI study planner powered by the NVIDIA API to generate customized academic schedules.",
+      "image": "/images/note_mate.jpg",
+      "tech": ["React", "Vite", "NVIDIA API", "React Router", "Context API", "React Draggable", "Tailwind CSS", "Axios", "Node.js", "Express.js", "MongoDB"],
+      "liveUrl": "https://note-mate-sage.vercel.app/",
+      "githubUrl": "https://github.com/MAHAVEER-IT/Note-Mate",
+      "challenge": "Integrating complex, responsive schedules and draggable boards with real-time AI generation can slow down browser main loops and expose secure keys on the client-side.",
+      "solution": "Built NoteMate with React and Vite using Context API for structured CRUD. Draggable sticky notes leverage React Draggable, while the AI Study Planner delegates prompts securely to an Express server proxy that invokes the NVIDIA API, returning instant markdown schedules.",
+      "highlights": [
+        "AI Study Planner generating structured, customized academic calendars using NVIDIA API prompts.",
+        "Draggable sticky notes that persist position coordinates and color codes across active browser sessions.",
+        "Comprehensive note management featuring archive categories, color-coded filters, and JWT-secured routes."
+      ],
+      "architecture": [
+        { "name": "React App (Vite)", "desc": "Renders note folders, handles draggable session storage coordinates, and routes authenticated dashboards." },
+        { "name": "Express Security Proxy", "desc": "Validates JWT session credentials and acts as a gateway to external AI model endpoints." },
+        { "name": "NVIDIA API", "desc": "Processes text prompts server-side to generate optimized educational study calendars." },
+        { "name": "MongoDB Storage", "desc": "Saves notes, sticky layout indices, and archived structures linked to user profiles." }
+      ],
+      "code": "// Node.js backend route calling NVIDIA API securely to generate study plans\nconst express = require('express');\nconst axios = require('axios');\nconst router = express.Router();\n\nrouter.post('/generate-study-plan', async (req, res) => {\n  const { subject, duration, goal } = req.body;\n  \n  try {\n    const response = await axios.post(\n      'https://integrate.api.nvidia.com/v1/chat/completions',\n      {\n        model: 'meta/llama3-70b-instruct',\n        messages: [{\n          role: 'user',\n          content: 'Generate a study plan for ' + subject + ' over ' + duration + ' to achieve: ' + goal + '. Output clean markdown.'\n        }],\n        temperature: 0.7\n      },\n      {\n        headers: {\n          'Authorization': 'Bearer ' + process.env.NVIDIA_API_KEY,\n          'Content-Type': 'application/json'\n        }\n      }\n    );\n    res.json({ studyPlan: response.data.choices[0].message.content });\n  } catch (err) {\n    console.error(err);\n    res.status(500).json({ error: 'AI generation service unavailable' });\n  }\n});"
+    },
+    {
+      "id": "sow-grow",
+      "name": "Sow & Grow",
+      "tagline": "Voice-first AI farm companion app",
+      "category": "Mobile",
+      "description": "A Material 3 mobile assistant for farmers, featuring Gemini Flash 2.0 conversational chat, speech-to-text, weather calendars, livestock vaccination tracking, and dynamic disease heatmaps using OpenStreetMap.",
+      "image": "/images/sow_grow.png",
+      "tech": ["Flutter", "Dart", "Provider", "Gemini AI", "Firebase", "Flutter Map", "OpenStreetMap", "TTS / STT"],
+      "liveUrl": "https://www.canva.com/design/DAGrAd4CWMI/JwQ19kPFiNsjxFi0YFJ9_A/watch?utm_content=DAGrAd4CWMI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0409f5f144",
+      "githubUrl": "https://github.com/MAHAVEER-IT/Sow-Grow",
+      "challenge": "Providing accessible, interactive agricultural guidelines to rural farmers with low internet speeds and varied literacy levels.",
+      "solution": "Designed a voice-friendly Flutter client using local TTS/STT packages. Implemented Gemini Flash 2.0 via a REST service layer (FarmCare) to handle plant image diagnoses, paired with a local-first Flutter Map dashboard showing geospatial plant disease heatmaps.",
+      "highlights": [
+        "FarmHelper AI: Conversational voice assistant featuring Gemini Flash 2.0 chat, image uploads, and Speech-to-Text.",
+        "Livestocare Suite: Simple tracker registry for livestock records, vaccination dates, and SMS reminders.",
+        "Disease Heatmap: Interactive OpenStreetMap rendering overlay layers of diagnosed crop/animal infections."
+      ],
+      "architecture": [
+        { "name": "Flutter Client", "desc": "Material 3 UI utilizing Provider state management and geolocator map rendering." },
+        { "name": "FarmCare Backend API", "desc": "Express service orchestrating user data, regional coordinates, and weather advisory tables." },
+        { "name": "Gemini Generative API", "desc": "Performs natural language voice processing and visual diagnosis of crop leaf conditions." },
+        { "name": "Firebase Services", "desc": "Authenticates accounts, stores uploaded diagnostic logs, and dispatches reminders." }
+      ],
+      "code": "// Dart service invoking Gemini API via Generative AI package\nimport 'package:google_generative_ai/google_generative_ai.dart';\n\nclass FarmHelperService {\n  final String apiKey = const String.fromEnvironment('GEMINI_API_KEY');\n  \n  Future<String> askFarmHelper(String prompt, List<int>? imageBytes) async {\n    final model = GenerativeModel(model: 'gemini-2.0-flash', apiKey: apiKey);\n    final content = [Content.text(prompt)];\n    \n    if (imageBytes != null) {\n      content.add(Content.data('image/jpeg', imageBytes));\n    }\n    \n    final response = await model.generateContent(content);\n    return response.text ?? 'No response received. Please try again.';\n  }\n}"
+    },
+    {
+      "id": "pdf-flow",
+      "name": "PDF Flow",
+      "tagline": "Elegant browser-based document converter",
+      "category": "Utility",
+      "description": "A zero-clutter, high-performance web utility that converts DOCX, PPT, XLSX, and images directly to PDF format, or merges multiple PDFs in the browser using client-side document compilers.",
+      "image": "/images/pdf_flow.jpg",
+      "tech": ["Next.js 15", "React 19", "Tailwind CSS 4", "pdf-lib", "SWC Compiler", "HTML5 Files API"],
+      "liveUrl": "https://pdf-flow-smoky.vercel.app/",
+      "githubUrl": "https://github.com/MAHAVEER-IT/PDF_FLOW.git",
+      "challenge": "Performing file conversions and document editing in-browser quickly without crashing user interface threads or sending private data to server pipelines.",
+      "solution": "Leveraged the browser's raw processing performance. Used pdf-lib to perform document merges, image compilations, and format operations entirely on the client, resulting in near-instant outputs with maximum security.",
+      "highlights": [
+        "Client-side conversion models for DOCX, PPT, XLSX, and images straight into optimized PDF formats.",
+        "Fast PDF merging pipeline combining bulk PDFs into a single file with custom page indices.",
+        "Zero login required, zero remote bandwidth overhead, keeping private documents completely local."
+      ],
+      "architecture": [
+        { "name": "Next.js 15 UI", "desc": "Responsive layout powered by Tailwind CSS 4 compiler and client-side StepperFlow hooks." },
+        { "name": "pdf-lib Engine", "desc": "Client-side binary manipulation library that recompiles PDF streams directly in browser memory." },
+        { "name": "HTML5 File Reader", "desc": "Reads incoming files as raw ArrayBuffers, feeding them to compilers without server transport." }
+      ],
+      "code": "// Client-side PDF Merging implementation using pdf-lib in Next.js\nimport { PDFDocument } from 'pdf-lib';\n\nexport const mergePDFDocuments = async (pdfArrayBuffers) => {\n  const mergedPdf = await PDFDocument.create();\n\n  for (const buffer of pdfArrayBuffers) {\n    const pdf = await PDFDocument.load(buffer);\n    const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());\n    copiedPages.forEach((page) => mergedPdf.addPage(page));\n  }\n\n  const mergedPdfBytes = await mergedPdf.save();\n  return mergedPdfBytes;\n};"
+    },
+    {
+      "id": "parking-tracker",
+      "name": "Visitor Parking Tracker",
+      "tagline": "Smart parking slots registration portal",
+      "category": "Full Stack",
+      "description": "A premium booking and registration dashboard for commercial and residential facilities, featuring vehicle categorization, duration calculators, Google Sign-In, and live Firestore slot occupancy tracking.",
+      "image": "/images/parking_management.png",
+      "tech": ["Next.js 15", "React 19", "Tailwind CSS", "React Hook Form", "Firebase Auth", "Firestore NoSQL"],
+      "liveUrl": "https://visitor-parking-tracker.vercel.app/",
+      "githubUrl": "https://github.com/MAHAVEER-IT/visitor-parking-tracker",
+      "challenge": "Providing a responsive, real-time booking form that updates occupancy immediately while ensuring secure validation across role permissions.",
+      "solution": "Built a Next.js App Router portal integrated with Firebase client SDKs. Used React Hook Form for client-side license plate formatting, writing registrations directly to Firebase Firestore to trigger instant listener layout updates.",
+      "highlights": [
+        "Secure Google Sign-In and profile authorization using Firebase Authentication.",
+        "React Hook Form validation mapping license formats (Two Wheeler, Four Wheeler, Heavy, EV).",
+        "Firestore real-time listeners syncing parking availability status indicators instantly across operators."
+      ],
+      "architecture": [
+        { "name": "Next.js Client", "desc": "Dashboard UI rendering active bookings and responsive forms using React Hook Form." },
+        { "name": "Firebase Auth", "desc": "Manages user authorization states, logins, and credentials securely." },
+        { "name": "Firebase Firestore", "desc": "NoSQL database serving as the source of truth for slot occupancy states and logs." }
+      ],
+      "code": "// Next.js Firebase Firestore booking submission helper\nimport { db } from '../firebase/config';\nimport { collection, addDoc, updateDoc, doc } from 'firebase/firestore';\n\nexport const submitParkingBooking = async (userId, data) => {\n  const bookingRef = collection(db, 'bookings');\n  \n  const newBooking = await addDoc(bookingRef, {\n    userId,\n    vehicleNo: data.vehicleNo.toUpperCase(),\n    vehicleType: data.vehicleType,\n    slotId: data.slotId,\n    entryTime: new Date().toISOString(),\n    status: 'active'\n  });\n\n  const slotDocRef = doc(db, 'slots', data.slotId);\n  await updateDoc(slotDocRef, {\n    isOccupied: true,\n    currentBookingId: newBooking.id\n  });\n\n  return newBooking.id;\n};"
+    },
+    {
+      "id": "bank-inishit",
+      "name": "Bank Inishit",
+      "tagline": "Unified multi-bank utility app",
+      "category": "Mobile",
+      "description": "A secure banking dashboard consolidating key operations for SBI, Indian Bank, Union Bank, and KVB. Provides toll-free dial shortcuts, branch/ATM locators using Google Maps, gold/personal loan calculators, and expense trackers.",
+      "image": "/images/banking_application.png",
+      "tech": ["Flutter", "Dart", "Firebase", "Google Maps API", "Currency Converter API", "Syncfusion Charts"],
+      "liveUrl": "https://drive.google.com/drive/folders/13j3pnF7rVRWrvD1OvyUghWhdSVP8HYQR",
+      "githubUrl": "https://github.com/MAHAVEER-IT/bank_inish",
+      "challenge": "Accessing essential banking tools across different banks in India without installing multiple heavy, slow corporate apps.",
+      "solution": "Developed a unified banking application supporting SBI, Indian Bank, Union Bank, and KVB. Consolidates balance check hotlines, ATM blocking shortcuts, Google Maps branch trackers, and Gold/Personal loan calculators.",
+      "highlights": [
+        "Toll-free banking shortcuts using integrated dialers for rapid balance checks and card blocks.",
+        "Interactive nearby ATM and branch locator utilizing integrated Google Maps API markers.",
+        "Gold and personal loan calculators referencing scheme data tables with Syncfusion Charts."
+      ],
+      "architecture": [
+        { "name": "Flutter UI", "desc": "Consolidated tab screens for balance checking, emergency cards blocking, and loan calculating." },
+        { "name": "Google Maps API", "desc": "Locates nearby verified branch and ATM centers with live driving directions." },
+        { "name": "Loan Engine & Syncfusion", "desc": "Evaluates amortization tables and visualizes monthly principal vs interest splits." },
+        { "name": "Firebase backend", "desc": "Stores customized user favorites, saved calculator comparisons, and hotline indices." }
+      ],
+      "code": "// Flutter URL Launcher integration for quick dial bank hotlines\nimport 'package:url_launcher/url_launcher.dart';\n\nFuture<void> makeBankTollFreeCall(String phoneNumber) async {\n  final Uri phoneUri = Uri(scheme: 'tel', path: phoneNumber);\n  if (await canLaunchUrl(phoneUri)) {\n    await launchUrl(phoneUri);\n  } else {\n    throw 'Could not launch toll free line ' + phoneNumber;\n  }\n}"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "hackastrom-25",
+      "title": "Hackastrom'25",
+      "rank": "Rank #2",
+      "placement": "2nd Place Winner & AI Optimization Lead",
+      "description": "Competed in a rigorous 36-hour sprint to build a fully-functional AI-driven energy optimization platform. Engineered predictive models forecasting grid utilization and load balancing.",
+      "prize": "Rs. 15,000",
+      "metrics": "+28% Efficiency Boost"
+    },
+    {
+      "id": "leetcode",
+      "title": "LeetCode Proficiency",
+      "rank": "200+ Solved",
+      "placement": "72% Accuracy (Medium / Hard)",
+      "description": "Consistently practicing core data structures & algorithm puzzles to secure optimal query latency and memory allocation models.",
+      "metrics": "Dynamic Programming, Trees, Graphs, Binary Search"
+    },
+    {
+      "id": "freshothon",
+      "title": "Freshothon",
+      "rank": "Rank #3",
+      "placement": "3rd Place Hackathon Winner",
+      "description": "Competed with over 150+ student teams to conceptualize and build a smart civic safety mapping solution in a 24-hour speed sprint.",
+      "metrics": "24h Speed Sprint Completed"
+    },
+    {
+      "id": "srec-project-expo",
+      "title": "Sri Eshwar Project Expo",
+      "rank": "Rank #3",
+      "placement": "3rd Place Winner & Social Impact Award",
+      "description": "Presented our AI agricultural assistant Sow & Grow to a panel of corporate judges. Evaluated on user design, engineering scalability, and local-first offline image classifications.",
+      "scores": {
+        "viability": "9.5/10",
+        "uxExecution": "9.0/10",
+        "architecture": "8.8/10"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "id": "mongodb-cert",
+      "title": "MongoDB Certified Associate Developer",
+      "issuer": "MongoDB",
+      "date": "2025",
+      "credentialId": "www.credly.com/go/o1RjgrXd",
+      "url": "https://www.credly.com/badges/743fc448-d8eb-46a8-8438-7bc7ff250a26/public_url",
+      "image": "/images/mongodb.png",
+      "topics": [
+        "NoSQL Database Concepts",
+        "CRUD Operations",
+        "Schema Design & Data Modeling",
+        "Indexing and Query Optimization",
+        "Aggregation Framework",
+        "MongoDB Atlas Integration"
+      ]
+    },
+    {
+      "id": "aws-cert",
+      "title": "AWS Cloud Practitioner",
+      "issuer": "Amazon Web Services (AWS)",
+      "date": "2026",
+      "credentialId": "fa46a4996e424f92a0357334e9cab1c3",
+      "url": "https://www.credly.com/badges/00e10b5e-8c1c-4a42-ac61-906250ffeeeb/public_url",
+      "image": "/images/aws.png",
+      "topics": [
+        "Cloud Computing Fundamentals",
+        "AWS Global Infrastructure",
+        "Compute, Storage, and Networking Services",
+        "Cloud Security and Identity Management",
+        "Pricing and Billing Models",
+        "Shared Responsibility Model"
+      ]
+    },
+    {
+      "id": "dsa-cert",
+      "title": "Data Structures & Algorithms",
+      "issuer": "Udemy (Abdul Bari)",
+      "date": "2024",
+      "credentialId": "UC-2a09c594-7240-4b22-8fed-a37b3ec96fOf",
+      "url": "https://drive.google.com/file/d/1hNaqWsmg33o9NrRHP1lUBnj1I618PPf8/view?usp=drive_link",
+      "image": null,
+      "topics": [
+        "Arrays, Linked Lists, Stacks, Queues",
+        "Trees, BST, Graph Algorithms",
+        "Recursion and Backtracking",
+        "Dynamic Programming (DP) & Greedy Algorithms",
+        "Time and Space Complexity Analysis (Big O)"
+      ]
+    }
+  ],
+  "navigation": [
+    { "name": "Home", "href": "#home" },
+    { "name": "About", "href": "#about" },
+    { "name": "Skills", "href": "#skills" },
+    { "name": "Projects", "href": "#projects" },
+    { "name": "Achievements", "href": "#achievements" },
+    { "name": "Contact", "href": "#contact" }
+  ],
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mahaveer K",
+    "jobTitle": "Full Stack Developer",
+    "url": "https://www.mahaveer.live",
+    "image": "https://www.mahaveer.live/images/mahaveer_profile.png",
+    "sameAs": [
+      "https://github.com/MAHAVEER-IT",
+      "https://linkedin.com/in/mahaveer-k"
+    ],
+    "knowsAbout": [
+      "React",
+      "Next.js",
+      "Flutter",
+      "Dart",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
+      "AWS Cloud Development",
+      "Data Structures and Algorithms",
+      "AI Application Development",
+      "Full Stack Development"
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Sri Ramakrishna Engineering College / Sri Eshwar College of Engineering",
+      "location": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "addressCountry": "India"
+        }
+      }
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Better Tomorrow"
+    },
+    "description": "Mahaveer K is a Full Stack Developer specializing in React, Next.js, Flutter, Node.js, and AI product integration."
+  }
+}

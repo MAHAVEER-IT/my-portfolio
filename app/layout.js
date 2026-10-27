@@ -1,26 +1,32 @@
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import CursorGlow from "@/components/CursorGlow";
-import Chatbot from "@/components/Chatbot";
+import PandaChatbot from "@/components/PandaChatbot";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
 });
+
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FFFDF9" },
+    { media: "(prefers-color-scheme: dark)", color: "#17191F" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata = {
   metadataBase: new URL("https://www.mahaveer.live"),
@@ -44,10 +50,14 @@ export const metadata = {
     "Node.js",
     "MongoDB",
     "AI Application Developer",
-    "Mobile Developer"
+    "Mobile Developer",
+    "Coimbatore Developer"
   ],
   authors: [{ name: "Mahaveer K", url: "https://github.com/MAHAVEER-IT" }],
   creator: "Mahaveer K",
+  publisher: "Mahaveer K",
+  category: "technology",
+  classification: "Portfolio",
   robots: {
     index: true,
     follow: true,
@@ -69,10 +79,11 @@ export const metadata = {
     siteName: "Mahaveer K Portfolio",
     images: [
       {
-        url: "/images/mahaveer_profile.png",
+        url: "/images/og-card.png",
         width: 1200,
         height: 630,
         alt: "Mahaveer K | Full Stack Developer",
+        type: "image/png",
       },
     ],
   },
@@ -80,7 +91,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Mahaveer K | Full Stack Developer",
     description: "Portfolio of Mahaveer K, showcasing web, mobile, and AI application designs.",
-    images: ["/images/mahaveer_profile.png"],
+    images: ["/images/og-card.png"],
   },
 };
 
@@ -99,7 +110,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
@@ -107,10 +118,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full flex flex-col bg-brand-bg text-brand-text transition-colors duration-300">
         <SmoothScroll>
-          <CursorGlow />
           {children}
-          <Chatbot />
         </SmoothScroll>
+        <PandaChatbot />
       </body>
     </html>
   );

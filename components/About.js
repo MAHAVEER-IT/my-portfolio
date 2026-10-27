@@ -1,160 +1,157 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, Sparkles, Code2, Cpu, Globe } from "lucide-react";
-
-// Timeline Milestones
-const timelineData = [
-  {
-    year: "2023",
-    title: "Started Engineering",
-    description: "B.Tech in Information Technology at Sri Eshwar College of Engineering. Commenced journey into algorithms, computer systems, and full-stack development foundations.",
-    icon: GraduationCap,
-    category: "education",
-  },
-  {
-    year: "2025",
-    title: "Internship at Better Tomorrow",
-    description: "Joined as a Full Stack Developer Intern. Spearheaded AI integration projects and developed production-ready Next.js & MERN products.",
-    icon: Briefcase,
-    category: "work",
-  },
-  {
-    year: "2025",
-    title: "Built Multiple Real-world Products",
-    description: "Authored & launched scalable apps (Geo-Guardian, NoteMate, Sow & Grow) resolving concrete real-world pain points.",
-    icon: Sparkles,
-    category: "project",
-  },
-  {
-    year: "2027",
-    title: "Graduation",
-    description: "Completed B.Tech. Embarking on full-time engineering career to deploy scalable AI systems and high-fidelity interfaces.",
-    icon: GraduationCap,
-    category: "education",
-  },
-];
-
-// Specializations
-const specializations = [
-  { name: "MERN Stack Development", icon: Code2, desc: "Building full-stack web architectures with React, Node, Express, and MongoDB." },
-  { name: "Next.js & App Router", icon: Globe, desc: "Structuring highly optimized, server-rendered web applications with premium transitions." },
-  { name: "Mobile Development (Flutter)", icon: Cpu, desc: "Crafting compiled native iOS and Android apps using single-codebase Flutter framework." },
-  { name: "AI Integration & Product Design", icon: Sparkles, desc: "Embedding LLMs, vector search engines, and prompt engineering paradigms into core services." },
-];
+import React from 'react';
+import { User, Cpu, Sprout, GraduationCap, MapPin, Heart, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import CherryBlossomPetals from './hero/CherryBlossomPetals';
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative py-24 md:py-32 px-6 md:px-12 bg-brand-bg transition-colors duration-300 overflow-hidden"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}
+      className="relative min-h-screen w-full overflow-hidden bg-[#FFFDF9] text-[#17191F] select-none md:select-auto font-sans scroll-mt-20"
     >
-      {/* Decorative Gradients */}
-      <div className="absolute top-[30%] right-[-10%] w-[300px] h-[300px] bg-accent/5 dark:bg-accent/10 rounded-full blur-[80px] pointer-events-none" />
+      {/* 1. Full-Width Background: Cherry Blossom Canal Village */}
+      <div className="absolute inset-0 z-0 pointer-events-none transform-gpu will-change-transform backface-hidden [contain:paint]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/cherry-blossom-canal-village.webp"
+          alt="Cherry blossom canal village in traditional Chinese style with bridge, pagoda and blooming sakura"
+          className="h-full w-full object-cover object-left md:object-center transform-gpu backface-hidden"
+          fetchPriority="high"
+          decoding="async"
+        />
 
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="flex flex-col items-start mb-16 md:mb-20">
-          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2 flex items-center gap-1.5">About Me</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-text font-heading leading-tight flex items-center gap-2">
-            Who Am I?
+        {/* Soft Right-Side Porcelain Readability Gradient Overlay */}
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-t from-[#FFFDF9] via-[#FFFDF9]/85 to-[#FFFDF9]/40
+            lg:bg-gradient-to-r lg:from-transparent lg:via-[#FFFDF9]/85 lg:to-[#FFFDF9]
+            lg:left-[35%]
+          "
+          aria-hidden="true"
+        />
+
+        {/* Top & Bottom Soft Feathering to blend with neighboring sections */}
+        <div
+          className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#FFFDF9]/60 to-transparent"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FFFDF9] to-transparent"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* 2. Seamless Cherry Blossom Petals Drift across About section */}
+      <CherryBlossomPetals />
+
+      {/* 3. Main Content Container: Framed on the Right Column */}
+      <div className="relative z-20 mx-auto flex min-h-screen max-w-[1440px] items-center justify-end px-6 py-20 sm:px-10 lg:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full max-w-xl lg:max-w-[560px]"
+        >
+          {/* Eyebrow Pill */}
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#FFF0F0] px-4 py-1.5 text-xs sm:text-sm font-semibold text-[#E03131] border border-[#FEE2E2] shadow-xs">
+            <User className="h-4 w-4 text-[#E03131]" />
+            <span>About Me</span>
+          </div>
+
+          {/* Section Main Heading */}
+          <h2
+            className="mt-5 text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#17191F] font-heading leading-[1.12]"
+          >
+            A bit <span className="text-[#E03131]">about me</span>
           </h2>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-start">
-          
-          {/* Left Column: Story & Specializations */}
-          <div className="lg:col-span-6 flex flex-col gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col gap-6"
+          {/* Personal Bio Paragraph */}
+          <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#4B5563] font-medium">
+            I’m Mahaveer K., a final-year IT student who enjoys building useful, scalable, and AI-powered applications that solve real-world problems.
+          </p>
+
+          {/* Three Feature Cards Row */}
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.65, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-8 grid grid-cols-3 gap-3 sm:gap-4"
+          >
+            {/* Developer */}
+            <div className="flex flex-col items-center justify-center rounded-2xl bg-[#FFF0ED] border border-[#FFDCD4]/50 py-4 px-3 sm:py-5 sm:px-4 text-center transition-all duration-200 hover:-translate-y-0.5 shadow-xs">
+              <span className="font-mono text-xl sm:text-2xl font-bold text-[#E03131] leading-none select-none">
+                &lt;/&gt;
+              </span>
+              <span className="mt-3 text-xs sm:text-sm font-semibold text-[#17191F]">Developer</span>
+            </div>
+
+            {/* AI Enthusiast */}
+            <div className="flex flex-col items-center justify-center rounded-2xl bg-[#EDF5FF] border border-[#DBEAFE]/50 py-4 px-3 sm:py-5 sm:px-4 text-center transition-all duration-200 hover:-translate-y-0.5 shadow-xs">
+              <Cpu className="h-6 w-6 text-[#2563EB]" strokeWidth={2.2} />
+              <span className="mt-3 text-xs sm:text-sm font-semibold text-[#17191F]">AI Enthusiast</span>
+            </div>
+
+            {/* Lifelong Learner */}
+            <div className="flex flex-col items-center justify-center rounded-2xl bg-[#EDFAF1] border border-[#DCFCE7]/50 py-4 px-3 sm:py-5 sm:px-4 text-center transition-all duration-200 hover:-translate-y-0.5 shadow-xs">
+              <Sprout className="h-6 w-6 text-[#16A34A]" strokeWidth={2.2} />
+              <span className="mt-3 text-xs sm:text-sm font-semibold text-[#17191F]">Lifelong Learner</span>
+            </div>
+          </motion.div>
+
+          {/* Information & Credentials List */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.65, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-8 space-y-3.5 text-sm sm:text-base text-[#374151]"
+          >
+            {/* Education */}
+            <div className="flex items-center gap-3.5 pb-3.5 border-b border-[#17191F]/8">
+              <GraduationCap className="h-5 w-5 text-[#6B7280] shrink-0" />
+              <span className="font-medium text-[#17191F]/90">
+                B.Tech IT <span className="text-[#9CA3AF] mx-1">·</span> Sri Eshwar College of Engineering
+              </span>
+            </div>
+
+            {/* Location */}
+            <div className="flex items-center gap-3.5 pb-3.5 border-b border-[#17191F]/8">
+              <MapPin className="h-5 w-5 text-[#6B7280] shrink-0" />
+              <span className="font-medium text-[#17191F]/90">Coimbatore, Tamil Nadu</span>
+            </div>
+
+            {/* Passions */}
+            <div className="flex items-center gap-3.5 pt-0.5">
+              <Heart className="h-5 w-5 text-[#6B7280] shrink-0" />
+              <span className="font-medium text-[#17191F]/90">
+                Passionate about <span className="text-[#9CA3AF] mx-1">·</span> Building <span className="text-[#9CA3AF] mx-1">·</span> Learning <span className="text-[#9CA3AF] mx-1">·</span> Creating
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Call to Action Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.55, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-9"
+          >
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2.5 rounded-full bg-[#17191F] px-7 py-3.5 text-sm sm:text-base font-medium text-[#FFFDF9] shadow-md transition-all duration-200 hover:bg-[#17191F]/90 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E03131] focus-visible:ring-offset-2"
             >
-              <h3 className="text-2xl font-bold text-brand-text font-heading">
-                A passionate software engineer blending design and performance.
-              </h3>
-              
-              <p className="text-base md:text-lg text-brand-text-muted leading-relaxed">
-                I am a final-year B.Tech Information Technology student at Sri Eshwar College of Engineering. I possess a deep passion for building scalable software systems, modern web applications, AI-integrated workflows, and high-fidelity mobile experiences.
-              </p>
-              
-              <p className="text-base md:text-lg text-brand-text-muted leading-relaxed">
-                I focus on writing clean, clean code, optimizing backend systems, and crafting responsive user interfaces that deliver delightful digital stories. My approach is centered on "Elegant Simplicity"—stripping away clutter to emphasize performance and value.
-              </p>
-            </motion.div>
-
-            {/* Specializations Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-              {specializations.map((spec, index) => {
-                const Icon = spec.icon;
-                return (
-                  <motion.div
-                    key={spec.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="p-5 rounded-2xl border border-brand-border bg-brand-card hover:border-primary/30 transition-all shadow-brand hover:shadow-brand-hover hover:scale-[1.01]"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
-                      <Icon size={20} />
-                    </div>
-                    <h4 className="font-bold text-brand-text mb-1.5">{spec.name}</h4>
-                    <p className="text-xs text-brand-text-muted leading-relaxed">{spec.desc}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Right Column: Animated Vertical Timeline */}
-          <div className="lg:col-span-6 relative pl-6 sm:pl-8">
-            
-            {/* Timeline Vertical Track Line */}
-            <div className="absolute left-[27px] sm:left-[35px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-primary via-primary/40 to-brand-border/20" />
-            
-            {/* Timeline Nodes */}
-            <div className="flex flex-col gap-10 relative">
-              {timelineData.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={`${item.year}-${index}`}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
-                    className="flex gap-6 relative"
-                  >
-                    {/* Floating Node Icon Indicator */}
-                    <div className="relative z-10 flex items-center justify-center w-[24px] h-[24px] sm:w-[32px] sm:h-[32px] rounded-full bg-brand-card border-2 border-primary text-primary shadow-sm mt-1 transform translate-x-[-12px] sm:translate-x-[-16px]">
-                      <Icon size={12} className="sm:w-3.5 sm:h-3.5" />
-                    </div>
-
-                    {/* Timeline Text Card */}
-                    <div className="flex-1 p-6 rounded-2xl border border-brand-border bg-brand-card shadow-brand hover:border-brand-border/80 transition-all">
-                      <div className="flex flex-wrap items-baseline gap-2 mb-2">
-                        <span className="text-xs font-bold text-primary px-2.5 py-0.5 rounded-full bg-primary/8 dark:bg-primary/20">
-                          {item.year}
-                        </span>
-                        <h4 className="text-lg font-bold text-brand-text font-heading">
-                          {item.title}
-                        </h4>
-                      </div>
-                      <p className="text-sm text-brand-text-muted leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-          </div>
-
-        </div>
+              <span>View My Work</span>
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ name = "Mahaveer K"
 role = "Full Stack Developer"
 location = "Coimbatore, Tamil Nadu, India"
 email = "mahaveerk.dev@gmail.com"
+secondary_email = "mahaveer.k2023it@sece.ac.in"
 phone = "+916374827794"
 github = "https://github.com/MAHAVEER-IT"
 linkedin = "https://linkedin.com/in/mahaveer-k"
@@ -19,10 +20,10 @@ experience = "Full Stack Developer specializing in premium React/Next.js web app
 motto = "Building modern web applications, mobile experiences, AI-powered products, and scalable digital solutions with elegant simplicity."
 
 [education]
-institution = "Sri Ramakrishna Engineering College (SREC), Coimbatore"
-degree = "B.E. Computer Science and Engineering"
+institution = "Sri Eshwar College of Engineering (SECE), Coimbatore"
+degree = "B.Tech in Information Technology"
 duration = "2023 - 2027"
-cgpa = "8.25"
+cgpa = "7.81"
 
 [experience_history]
 company = "Better Tomorrow"
@@ -62,12 +63,23 @@ dsa = {
 }
 
 [portfolio_projects]
-1. Geo-Guardian = {
+1. Pandivo TV = {
+  role: "Lead Systems & AI Engineer",
+  tagline: "Next-Gen AI-Powered Music & Continuous AI DJ for Fire TV & Android TV",
+  tech: ["React Native TV", "AWS Bedrock (Nova Lite)", "Google Gemini 3.5 Flash", "Whistle AI (C++ JNI)", "Amazon DynamoDB", "SQLite WAL"],
+  github: "https://github.com/MAHAVEER-IT/pandivo-tv",
+  demo: "https://github.com/MAHAVEER-IT/pandivo-tv/releases/tag/v1.0.0",
+  apk: "https://github.com/MAHAVEER-IT/pandivo-tv/releases/download/v1.0.0/pandivo-v1.0.0.apk",
+  case_study: "https://www.mahaveer.live/projects/pandivo-tv",
+  summary: "Living room TV music system with autonomous Continuous AI DJ, sub-120ms offline speech recognition with zero cloud dependencies, USB plug-and-play OTG playback, and SQLite WAL + DynamoDB sync. Verified on physical Fire OS TV hardware at 60 FPS in Amazon Appstore Quality Central."
+}
+2. Geo-Guardian = {
   role: "Full Stack Developer",
   tagline: "Real-time danger zone geofencing admin control panel",
   tech: ["React", "Vite", "Leaflet", "Socket.io Client", "Axios", "MongoDB 2dsphere", "Express"],
   github: "https://github.com/MAHAVEER-IT/Geo-Guardian",
   demo: "https://geo-guardian.netlify.app/",
+  case_study: "https://www.mahaveer.live/projects/geo-guardian",
   summary: "A control panel that monitors boundaries. Admins draw custom hazard zones and receive live coordinate breaches via WebSockets."
 }
 2. NoteMate = {
@@ -76,9 +88,19 @@ dsa = {
   tech: ["React", "Vite", "NVIDIA Llama API", "React Draggable", "Context API", "Express", "MongoDB"],
   github: "https://github.com/MAHAVEER-IT/Note-Mate",
   demo: "https://note-mate-sage.vercel.app/",
+  case_study: "https://www.mahaveer.live/projects/note-mate",
   summary: "Intelligent workspace containing persistent sticky notes, JWT security, and an AI study planner generating schedules securely."
 }
-3. Sow & Grow = {
+3. PDF Flow = {
+  role: "Next.js Utility Engineer",
+  tagline: "Elegant browser-based document converter",
+  tech: ["Next.js 15", "React 19", "Tailwind CSS 4", "pdf-lib", "SWC Compiler"],
+  github: "https://github.com/MAHAVEER-IT/PDF_FLOW.git",
+  demo: "https://pdf-flow-smoky.vercel.app/",
+  case_study: "https://www.mahaveer.live/projects/pdf-flow",
+  summary: "High-performance client-side Next.js converter converting DOCX, PPT, XLSX, and images directly in-browser with maximum data privacy."
+}
+4. Sow & Grow = {
   role: "Mobile Developer",
   tagline: "Voice-first AI farm companion app",
   tech: ["Flutter", "Dart", "Provider", "Gemini Flash 2.0 API", "Firebase", "Flutter Map", "OpenStreetMap"],
@@ -86,27 +108,9 @@ dsa = {
   demo: "https://www.canva.com/design/DAGrAd4CWMI/JwQ19kPFiNsjxFi0YFJ9_A/watch",
   summary: "Voice-friendly farm helper utilizing Gemini models for visual crop diagnosis, livestock logs, and disease heatmaps."
 }
-4. PDF Flow = {
-  role: "Next.js Utility Engineer",
-  tagline: "Elegant browser-based document converter",
-  tech: ["Next.js 15", "React 19", "Tailwind CSS 4", "pdf-lib", "SWC Compiler"],
-  github: "https://github.com/MAHAVEER-IT/PDF_FLOW.git",
-  demo: "https://pdf-flow-smoky.vercel.app/",
-  summary: "High-performance client-side Next.js converter converting DOCX, PPT, XLSX, and images directly in-browser with maximum data privacy."
-}
-5. Visitor Parking Tracker = {
-  role: "Full Stack Engineer",
-  tagline: "Smart parking slots registration portal",
-  tech: ["Next.js 15", "React 19", "Tailwind CSS", "React Hook Form", "Firebase Auth", "Firestore"],
-  github: "https://github.com/MAHAVEER-IT/visitor-parking-tracker",
-  demo: "https://visitor-parking-tracker.vercel.app/",
-  summary: "Operator vehicle entry dashboard managing slot allocations, calculations, and Google logins using Firestore listeners."
-}
-6. Bank Inishit = {
-  role: "Flutter Mobile Developer",
-  tagline: "Unified multi-bank utility app",
-  tech: ["Flutter", "Dart", "Firebase Auth", "Google Maps SDK", "Currency Exchange API"],
-  github: "https://github.com/MAHAVEER-IT/bank_inish",
-  demo: "https://drive.google.com/drive/folders/13j3pnF7rVRWrvD1OvyUghWhdSVP8HYQR",
-  summary: "Consolidates balance checking toll-free hotlines, ATM blocking shortcuts, Google Maps branch locators, and loan calculators for SBI, Indian Bank, Union Bank, and KVB."
-}
+
+[achievements]
+hackastrom = "Rank #2 at Hackastrom'25 36-hour sprint - AI-driven energy optimization platform"
+leetcode = "200+ LeetCode problems solved with 72% accuracy across Medium/Hard"
+freshothon = "Rank #3 at Freshothon 24-hour hackathon sprint"
+project_expo = "Rank #3 & Social Impact Award at Sri Eshwar Project Expo"

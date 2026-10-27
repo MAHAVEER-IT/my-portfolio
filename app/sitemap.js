@@ -1,14 +1,12 @@
 export default async function sitemap() {
   const baseUrl = "https://www.mahaveer.live";
 
-  // Dynamic project routes
+  // Active dynamic project case study routes
   const projectIds = [
+    "pandivo-tv",
     "geo-guardian",
     "note-mate",
-    "sow-grow",
     "pdf-flow",
-    "parking-tracker",
-    "bank-inishit"
   ];
 
   const projectUrls = projectIds.map((id) => ({

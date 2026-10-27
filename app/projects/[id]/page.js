@@ -3,11 +3,91 @@ import ProjectClient from "./ProjectClient";
 
 // Case Studies Database
 const projectDetails = {
+  "pandivo-tv": {
+    name: "Pandivo TV",
+    tagline: "Next-Gen AI-Powered Music & Continuous AI DJ Experience for Amazon Fire TV & Android TV",
+    category: "AI & TV Engineering",
+    image: "/images/pandivo_tv.jpg",
+    githubUrl: "https://github.com/MAHAVEER-IT/pandivo-tv",
+    liveUrl: "https://github.com/MAHAVEER-IT/pandivo-tv/releases/tag/v1.0.0",
+    apkUrl: "https://github.com/MAHAVEER-IT/pandivo-tv/releases/download/v1.0.0/pandivo-v1.0.0.apk",
+    tech: [
+      "React Native TV 0.86",
+      "AWS Bedrock (Nova Lite)",
+      "Google Gemini 3.5 Flash",
+      "Whistle AI (C++ NDK/JNI)",
+      "Amazon DynamoDB",
+      "SQLite (WAL Mode)",
+      "Fire OS 7 & 8",
+      "Android TV (API 24-34)"
+    ],
+    challenge: "Living room television environments present unique engineering constraints: TV remotes suffer from low-gain Bluetooth microphones and 800ms-2500ms cloud STT lag; standard Whisper models produce phantom silence hallucinations on ambient noise; and complex 10-foot D-pad navigation easily suffers from focus traps and frame drops on low-power TV chipsets.",
+    solution: "Engineered a native C++ JNI on-device speech engine (Whistle AI, ~16.9 MB) equipped with an 80Hz high-pass filter, energy-based VAD silence trimming, and peak AGC (0.85). Coupled with an autonomous Continuous AI DJ powered by AWS Bedrock (Nova Lite) and Gemini, a plug-and-play USB OTG music player, and local SQLite WAL storage synchronized non-blockingly to Amazon DynamoDB.",
+    highlights: [
+      "Continuous AI DJ & Smart Curation: Multi-stage pipeline powered by AWS Bedrock (Nova Lite) extracting mood, energy curves, and harmonic BPM transitions with dynamic radio-host commentary.",
+      "100% Offline Speech-to-Text: ~120ms Time to First Token with zero cloud latency and zero network dependencies via native C++ JNI Whistle engine (~16.9MB acoustic model).",
+      "Plug-and-Play USB Audio Player: Automatic OTG detection for USB thumb drives with offline ID3 metadata extraction for MP3, FLAC, WAV, and AAC.",
+      "Sub-Millisecond Hybrid Storage: Local SQLite in WAL mode ensures 60 FPS cold boots, mirrored asynchronously to Amazon DynamoDB cloud sync.",
+      "Physical TV Verified at 60 FPS: Tested and validated on physical Fire OS hardware (FOS 14 3P TV) with real Fire TV remotes in Amazon Appstore Quality Central.",
+      "Open Source Contribution: Extracted and published the standalone npm package react-native-whistle-tv-offline for the global TV developer ecosystem."
+    ],
+    architecture: [
+      { name: "React Native 10-Foot UI", desc: "60 FPS TV interface featuring spatial D-pad focus routing, zero focus traps, and interactive companion avatars." },
+      { name: "Whistle Native C++ DSP Engine", desc: "1-pole 80Hz high-pass filter, VAD silence trimming, automatic gain control, and RMS silence gating." },
+      { name: "AWS Bedrock & Gemini Cloud AI", desc: "Amazon Bedrock Nova Lite with Gemini 3.5 Flash fallback for vibe understanding and real-time DJ commentary." },
+      { name: "Hybrid SQLite WAL + DynamoDB", desc: "Local-first instant query engine synchronized asynchronously to DynamoDB cloud tables." }
+    ],
+    code: `// AudioPreprocessor.kt - Native DSP pipeline for living room TV remote microphones
+package com.pandivo.whistle
+
+class AudioPreprocessor {
+    companion object {
+        private const val HPF_ALPHA = 0.969f // 1-pole HPF (~80 Hz at 16kHz)
+        private const val NOMINAL_PEAK = 0.85f
+        private const val MAX_GAIN = 6.0f
+        private const val RMS_SILENCE_THRESHOLD = 0.010f
+
+        fun processAudio(rawPcm: ShortArray): PreprocessResult {
+            var prevInput = 0f
+            var prevOutput = 0f
+            var peak = 0f
+            var sumSquares = 0.0
+
+            // 1. 80Hz High-Pass Filter: Eliminate DC bias & HVAC low rumble
+            val filtered = FloatArray(rawPcm.size)
+            for (i in rawPcm.indices) {
+                val input = rawPcm[i] / 32768.0f
+                val output = HPF_ALPHA * (prevOutput + input - prevInput)
+                prevInput = input
+                prevOutput = output
+                filtered[i] = output
+
+                val abs = Math.abs(output)
+                if (abs > peak) peak = abs
+                sumSquares += (output * output).toDouble()
+            }
+
+            // 2. Dual-Stage Silence Gating: Reject silence hallucinations
+            val rms = Math.sqrt(sumSquares / rawPcm.size).toFloat()
+            if (rms < RMS_SILENCE_THRESHOLD && peak < 0.05f) {
+                return PreprocessResult(isSilent = true, audio = floatArrayOf())
+            }
+
+            // 3. Peak Automatic Gain Control (AGC) for distant TV remote mics
+            val gain = if (peak > 0.001f) Math.min(NOMINAL_PEAK / peak, MAX_GAIN) else 1.0f
+            for (i in filtered.indices) {
+                filtered[i] = Math.max(-1.0f, Math.min(1.0f, filtered[i] * gain))
+            }
+
+            return PreprocessResult(isSilent = false, audio = filtered)
+        }
+    }`
+  },
   "geo-guardian": {
     name: "Geo-Guardian",
     tagline: "Real-time danger zone management platform",
     category: "Full Stack Development",
-    image: "/images/geo_guardian.png",
+    image: "/images/geo_guardian.jpg",
     githubUrl: "https://github.com/MAHAVEER-IT/Geo-Guardian",
     liveUrl: "https://geo-guardian.netlify.app/",
     tech: ["React", "Vite", "Leaflet", "React Leaflet", "Leaflet Draw", "Socket.io Client", "Axios", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
@@ -55,7 +135,7 @@ router.post('/check-location', async (req, res) => {
     name: "NoteMate",
     tagline: "AI study planner & productivity dashboard",
     category: "Artificial Intelligence",
-    image: "/images/note_mate.png",
+    image: "/images/note_mate.jpg",
     githubUrl: "https://github.com/MAHAVEER-IT/Note-Mate",
     liveUrl: "https://note-mate-sage.vercel.app/",
     tech: ["React", "Vite", "NVIDIA API", "React Router", "Context API", "React Draggable", "Tailwind CSS", "Axios", "Node.js", "Express.js", "MongoDB"],
@@ -105,51 +185,11 @@ router.post('/generate-study-plan', async (req, res) => {
   }
 });`
   },
-  "sow-grow": {
-    name: "Sow & Grow",
-    tagline: "Voice-first AI farm companion app",
-    category: "Mobile Application",
-    image: "/images/sow_grow.png",
-    githubUrl: "https://github.com/MAHAVEER-IT/Sow-Grow",
-    liveUrl: "https://www.canva.com/design/DAGrAd4CWMI/JwQ19kPFiNsjxFi0YFJ9_A/watch?utm_content=DAGrAd4CWMI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0409f5f144",
-    tech: ["Flutter", "Dart", "Provider", "Gemini AI", "Firebase", "Flutter Map", "OpenStreetMap", "TTS / STT"],
-    challenge: "Providing accessible, interactive agricultural guidelines to rural farmers with low internet speeds and varied literacy levels.",
-    solution: "Designed a voice-friendly Flutter client using local TTS/STT packages. Implemented Gemini Flash 2.0 via a REST service layer (FarmCare) to handle plant image diagnoses, paired with a local-first Flutter Map dashboard showing geospatial plant disease heatmaps.",
-    highlights: [
-      "FarmHelper AI: Conversational voice assistant featuring Gemini Flash 2.0 chat, image uploads, and Speech-to-Text.",
-      "Livestocare Suite: Simple tracker registry for livestock records, vaccination dates, and SMS reminders.",
-      "Disease Heatmap: Interactive OpenStreetMap rendering overlay layers of diagnosed crop/animal infections."
-    ],
-    architecture: [
-      { name: "Flutter Client", desc: "Material 3 UI utilizing Provider state management and geolocator map rendering." },
-      { name: "FarmCare Backend API", desc: "Express service orchestrating user data, regional coordinates, and weather advisory tables." },
-      { name: "Gemini Generative API", desc: "Performs natural language voice processing and visual diagnosis of crop leaf conditions." },
-      { name: "Firebase Services", desc: "Authenticates accounts, stores uploaded diagnostic logs, and dispatches reminders." }
-    ],
-    code: `// Dart service invoking Gemini API via Generative AI package
-import 'package:google_generative_ai/google_generative_ai.dart';
-
-class FarmHelperService {
-  final String apiKey = const String.fromEnvironment('GEMINI_API_KEY');
-  
-  Future<String> askFarmHelper(String prompt, List<int>? imageBytes) async {
-    final model = GenerativeModel(model: 'gemini-2.0-flash', apiKey: apiKey);
-    final content = [Content.text(prompt)];
-    
-    if (imageBytes != null) {
-      content.add(Content.data('image/jpeg', imageBytes));
-    }
-    
-    final response = await model.generateContent(content);
-    return response.text ?? 'No response received. Please try again.';
-  }
-}`
-  },
   "pdf-flow": {
     name: "PDF Flow",
     tagline: "Elegant browser-based document converter",
     category: "Web Utility",
-    image: "/images/pdf_flow.png",
+    image: "/images/pdf_flow.jpg",
     githubUrl: "https://github.com/MAHAVEER-IT/PDF_FLOW.git",
     liveUrl: "https://pdf-flow-smoky.vercel.app/",
     tech: ["Next.js 15", "React 19", "Tailwind CSS 4", "pdf-lib", "SWC Compiler", "HTML5 Files API"],
@@ -185,101 +225,17 @@ export const mergePDFDocuments = async (pdfArrayBuffers) => {
   const mergedPdfBytes = await mergedPdf.save();
   return mergedPdfBytes;
 };`
-  },
-  "parking-tracker": {
-    name: "Visitor Parking Tracker",
-    tagline: "Smart parking slots registration portal",
-    category: "Full Stack Development",
-    image: "/images/parking_management.png",
-    githubUrl: "https://github.com/MAHAVEER-IT/visitor-parking-tracker",
-    liveUrl: "https://visitor-parking-tracker.vercel.app/",
-    tech: ["Next.js 15", "React 19", "Tailwind CSS", "React Hook Form", "Firebase Auth", "Firestore NoSQL"],
-    challenge: "Providing a responsive, real-time booking form that updates occupancy immediately while ensuring secure validation across role permissions.",
-    solution: "Built a Next.js App Router portal integrated with Firebase client SDKs. Used React Hook Form for client-side license plate formatting, writing registrations directly to Firebase Firestore to trigger instant listener layout updates.",
-    highlights: [
-      "Secure Google Sign-In and profile authorization using Firebase Authentication.",
-      "React Hook Form validation mapping license formats (Two Wheeler, Four Wheeler, Heavy, EV).",
-      "Firestore real-time listeners syncing parking availability status indicators instantly across operators."
-    ],
-    architecture: [
-      { name: "Next.js Client", desc: "Dashboard UI rendering active bookings and responsive forms using React Hook Form." },
-      { name: "Firebase Auth", desc: "Manages user authorization states, logins, and credentials securely." },
-      { name: "Firebase Firestore", desc: "NoSQL database serving as the source of truth for slot occupancy states and logs." }
-    ],
-    code: `// Next.js Firebase Firestore booking submission helper
-import { db } from '../firebase/config';
-import { collection, addDoc, updateDoc, doc } from 'firebase/firestore';
-
-export const submitParkingBooking = async (userId, data) => {
-  const bookingRef = collection(db, 'bookings');
-  
-  // Add new booking document
-  const newBooking = await addDoc(bookingRef, {
-    userId,
-    vehicleNo: data.vehicleNo.toUpperCase(),
-    vehicleType: data.vehicleType,
-    slotId: data.slotId,
-    entryTime: new Date().toISOString(),
-    status: 'active'
-  });
-
-  // Mark slot occupied in slots metadata collection
-  const slotDocRef = doc(db, 'slots', data.slotId);
-  await updateDoc(slotDocRef, {
-    isOccupied: true,
-    currentBookingId: newBooking.id
-  });
-
-  return newBooking.id;
-};`
-  },
-  "bank-inishit": {
-    name: "Bank Inishit",
-    tagline: "Unified multi-bank utility app",
-    category: "Mobile Application",
-    image: "/images/banking_application.png",
-    githubUrl: "https://github.com/MAHAVEER-IT/bank_inish",
-    liveUrl: "https://drive.google.com/drive/folders/13j3pnF7rVRWrvD1OvyUghWhdSVP8HYQR",
-    tech: ["Flutter", "Dart", "Firebase", "Google Maps API", "Currency Converter API", "Syncfusion Charts"],
-    challenge: "Accessing essential banking tools across different banks in India without installing multiple heavy, slow corporate apps.",
-    solution: "Developed a unified banking application supporting SBI, Indian Bank, Union Bank, and KVB. Consolidates balance check hotlines, ATM blocking shortcuts, Google Maps branch trackers, and Gold/Personal loan calculators.",
-    highlights: [
-      "Toll-free banking shortcuts using integrated dialers for rapid balance checks and card blocks.",
-      "Interactive nearby ATM and branch locator utilizing integrated Google Maps API markers.",
-      "Gold and personal loan calculators referencing scheme data tables with Syncfusion Charts."
-    ],
-    architecture: [
-      { name: "Flutter Mobile Client", desc: "Responsive cross-platform application utilizing Dart and Material Design cards." },
-      { name: "Firebase Database", desc: "Stores user preferences and static bank holiday records." },
-      { name: "Google Maps SDK", desc: "Queries local location vectors to plot close ATM coordinates." },
-      { name: "Currency Exchange API", desc: "Fetches real-time exchange rates to power the built-in converter." }
-    ],
-    code: `// Flutter dial service utilizing url_launcher for dial shortcuts
-import 'package:url_launcher/url_launcher.dart';
-
-class BankDialService {
-  // Toll free number mapping for SBI, Indian Bank, Union Bank, KVB
-  final Map<String, String> balanceCheckNumbers = {
-    'SBI': 'tel:09223766666',
-    'Indian Bank': 'tel:09289592895',
-    'Union Bank': 'tel:09223008586',
-    'KVB': 'tel:09266292662',
-  };
-
-  Future<void> makeCall(String bankName) async {
-    final number = balanceCheckNumbers[bankName];
-    if (number == null) return;
-    
-    final Uri uri = Uri.parse(number);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    } else {
-      throw 'Could not launch dialer for ' + number;
-    }
-  }
-}`
   }
 };
+
+export async function generateStaticParams() {
+  return [
+    { id: "pandivo-tv" },
+    { id: "geo-guardian" },
+    { id: "note-mate" },
+    { id: "pdf-flow" },
+  ];
+}
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
@@ -328,5 +284,35 @@ export default async function ProjectPage({ params }) {
     notFound();
   }
 
-  return <ProjectClient project={project} id={id} />;
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.name,
+    description: project.description || project.tagline,
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    author: {
+      "@type": "Person",
+      name: "Mahaveer K",
+      url: "https://www.mahaveer.live",
+    },
+    url: `https://www.mahaveer.live/projects/${id}`,
+    image: `https://www.mahaveer.live${project.image}`,
+    keywords: project.tech?.join(", "),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
+      <ProjectClient project={project} id={id} />
+    </>
+  );
 }

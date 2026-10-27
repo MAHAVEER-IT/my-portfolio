@@ -1,0 +1,47 @@
+# Mahaveer K
+
+> Full Stack Developer & AI Product Builder based in Coimbatore, Tamil Nadu, India.
+> Official Website: https://www.mahaveer.live
+
+Mahaveer K is an engineer specializing in scalable full-stack web architectures (Next.js, React, Node.js), mobile applications (Flutter, Dart), and AI systems (Google Gemini, NVIDIA Llama API, local RAG vector retrieval).
+
+## Core Information
+- **Full Name:** Mahaveer K
+- **Role:** Full Stack Developer & AI Product Builder
+- **Education:** B.Tech in Information Technology, Sri Eshwar College of Engineering (SECE), 2023–2027 (CGPA: 7.81)
+- **Email:** mahaveerk.dev@gmail.com / mahaveer.k2023it@sece.ac.in
+- **GitHub:** [MAHAVEER-IT](https://github.com/MAHAVEER-IT)
+- **LinkedIn:** [mahaveer-k](https://linkedin.com/in/mahaveer-k)
+- **Resume:** [View Resume](https://drive.google.com/file/d/1qLrF_P4qrPCr9tN_aykdFe7yUi11Kkzm/view?usp=sharing)
+
+## Technical Stack
+- **Frontend:** Next.js 15, React 19, Tailwind CSS v4, JavaScript (ES6+), HTML5, CSS3, GSAP, Lenis Smooth Scroll
+- **Mobile:** Flutter, Dart, Provider State Management, Google Maps SDK, Local AES Encryption, Hive DB
+- **Backend & APIs:** Node.js, Express.js, RESTful APIs, WebSockets (Socket.io)
+- **Databases:** MongoDB Atlas (Geospatial 2dsphere indexing), Firebase Firestore, Hive DB
+- **Cloud & DevOps:** AWS (S3, EC2, Cloud Practitioner Certified), Docker, Serverless Deployments
+- **Artificial Intelligence:** Google Gemini Flash 2.0 (multimodal diagnosis, audio STT/TTS), NVIDIA Llama API, Local Vector Embeddings (RAG)
+
+## Certifications & Credentials
+- **AWS Certified Cloud Practitioner** (Validation ID: `fa46a4996e424f92a0357334e9cab1c3`, [Credly](https://www.credly.com/badges/00e10b5e-8c1c-4a42-ac61-906250ffeeeb/public_url))
+- **MongoDB Certified Associate Developer** ([Credly](https://www.credly.com/badges/743fc448-d8eb-46a8-8438-7bc7ff250a26/public_url))
+- **Data Structures and Algorithms in Java** (Udemy Certified)
+
+## Featured Projects & Case Studies
+- [Pandivo TV](https://www.mahaveer.live/projects/pandivo-tv): Next-Gen AI-Powered Music & Continuous AI DJ Experience for Amazon Fire TV & Android TV. Features an autonomous Continuous AI DJ powered by AWS Bedrock (Nova Lite) & Gemini 3.5 Flash, 100% on-device speech-to-text via Whistle AI (C++ JNI, ~16.9MB acoustic model) with 80Hz HPF and peak AGC, USB plug-and-play audio player, and non-blocking SQLite WAL + DynamoDB replication. Verified at 60 FPS on physical Fire OS hardware in Amazon Appstore Quality Central. Standalone release APK available.
+- [Geo-Guardian](https://www.mahaveer.live/projects/geo-guardian): Real-time danger zone geofencing dashboard built with React, Leaflet Draw, Socket.io, Express, and MongoDB 2dsphere spatial calculation indexes.
+- [NoteMate](https://www.mahaveer.live/projects/note-mate): Intelligent workspace with draggable canvas notes and an AI study planner powered by NVIDIA Llama API.
+- [PDF Flow](https://www.mahaveer.live/projects/pdf-flow): Client-side document converter (DOCX, PPT, XLSX, images to PDF) built with Next.js 15 and pdf-lib for zero-server data privacy.
+- [Sow & Grow](https://github.com/MAHAVEER-IT/Sow-Grow): Multimodal agricultural assistant for crop diagnostics and market intelligence using Flutter and Gemini Flash.
+
+## Competitive Achievements
+- **Hackastrom'25:** Rank #2 (36-hour sprint, AI grid energy prediction platform)
+- **LeetCode:** 200+ algorithmic problems solved with 72% accuracy (Trees, Graphs, DP, Binary Search)
+- **Freshothon:** Rank #3 (Civic safety speed sprint)
+- **Sri Eshwar Project Expo:** Rank #3 & Social Impact Award (for Sow & Grow)
+
+## Key Links & Files
+- [Sitemap](https://www.mahaveer.live/sitemap.xml): XML index of all canonical pages
+- [Robots.txt](https://www.mahaveer.live/robots.txt): Crawler rules and sitemap reference
+- [Web App Manifest](https://www.mahaveer.live/manifest.webmanifest): PWA manifest
+- [AI Profile (ai.txt)](https://www.mahaveer.live/ai.txt): Machine-readable TOML profile for LLM answer engines

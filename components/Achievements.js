@@ -1,318 +1,341 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
-import { Trophy, Code2, Award, Sparkles, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { Trophy, ArrowUpRight } from "lucide-react";
+import CherryBlossomPetals from "@/components/hero/CherryBlossomPetals";
+
+/* ==========================================================================
+   AUTHENTIC VECTOR BRAND SVG ICONS (NO RASTER / NO CUT & PASTE)
+   ========================================================================== */
+
+function MongoDbLeafIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none">
+      <path
+        d="M12 2C11.5 2.5 7.5 7.8 7.5 13.5C7.5 17.5 9.8 21.2 12 22V2Z"
+        fill="#13AA52"
+      />
+      <path
+        d="M12 2C12.5 2.5 16.5 7.8 16.5 13.5C16.5 17.5 14.2 21.2 12 22V2Z"
+        fill="#119245"
+      />
+      <path
+        d="M12 3V21"
+        stroke="#0E7838"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function AwsLogoIcon() {
+  return (
+    <svg viewBox="0 0 52 34" className="w-10 h-7" fill="none">
+      <text
+        x="26"
+        y="17"
+        textAnchor="middle"
+        fill="#232F3E"
+        fontSize="16"
+        fontWeight="800"
+        fontFamily="system-ui, -apple-system, sans-serif"
+        letterSpacing="-0.6"
+      >
+        aws
+      </text>
+      <path
+        d="M11 23C18 28 34 28 41 23"
+        stroke="#FF9900"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M37.5 21.5L42 23L40 25.5"
+        fill="#FF9900"
+        stroke="#FF9900"
+        strokeWidth="0.8"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function HackerRankIcon() {
+  return (
+    <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
+      <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" fill="#1BA94C" />
+      <path
+        d="M12 10V22H14.5V17H17.5V22H20V10H17.5V14.8H14.5V10H12Z"
+        fill="#FFFFFF"
+      />
+    </svg>
+  );
+}
+
+/* ==========================================================================
+   LAUREL WREATH & CERTIFIED BADGES
+   ========================================================================== */
+
+function LaurelWreathBadge({ text = "2nd Place" }) {
+  return (
+    <div className="flex items-center justify-center gap-1.5 text-[#E03131] py-1 select-none">
+      {/* Left Laurel Branch */}
+      <svg viewBox="0 0 32 32" className="w-7 h-7" fill="currentColor">
+        <path d="M14 27c-4.5-2.2-7.5-6.8-7.5-12.2 0-3.5 1.3-6.8 3.5-9.3l1.1 1c-1.9 2.2-3 5-3 8.3 0 4.6 2.6 8.6 6.5 10.6l-.6 1.6z" />
+        <path d="M8.2 8.5c-.8-1.5-2.2-2.3-3.8-2.1.2 1.6 1.2 2.8 2.7 3.3l1.1-1.2z" />
+        <path d="M6 13.5c-1.2-1.2-2.8-1.5-4.2-.9.7 1.5 2 2.3 3.6 2.2l.6-1.3z" />
+        <path d="M6.2 19c-1.5-.7-3.2-.4-4.3.8 1.2 1.1 2.8 1.3 4.2.6l.1-1.4z" />
+        <path d="M9 24c-1.6 0-3.1.9-3.7 2.4 1.5.7 3.1.3 4.1-.9l-.4-1.5z" />
+        <path d="M12.5 6.5c-.2-1.7-1.3-3-2.9-3.3-.4 1.6.2 3.1 1.6 4l1.3-.7z" />
+      </svg>
+
+      <span className="text-sm sm:text-base font-bold tracking-tight text-[#E03131]">
+        {text}
+      </span>
+
+      {/* Right Laurel Branch (Mirrored) */}
+      <svg
+        viewBox="0 0 32 32"
+        className="w-7 h-7 scale-x-[-1]"
+        fill="currentColor"
+      >
+        <path d="M14 27c-4.5-2.2-7.5-6.8-7.5-12.2 0-3.5 1.3-6.8 3.5-9.3l1.1 1c-1.9 2.2-3 5-3 8.3 0 4.6 2.6 8.6 6.5 10.6l-.6 1.6z" />
+        <path d="M8.2 8.5c-.8-1.5-2.2-2.3-3.8-2.1.2 1.6 1.2 2.8 2.7 3.3l1.1-1.2z" />
+        <path d="M6 13.5c-1.2-1.2-2.8-1.5-4.2-.9.7 1.5 2 2.3 3.6 2.2l.6-1.3z" />
+        <path d="M6.2 19c-1.5-.7-3.2-.4-4.3.8 1.2 1.1 2.8 1.3 4.2.6l.1-1.4z" />
+        <path d="M9 24c-1.6 0-3.1.9-3.7 2.4 1.5.7 3.1.3 4.1-.9l-.4-1.5z" />
+        <path d="M12.5 6.5c-.2-1.7-1.3-3-2.9-3.3-.4 1.6.2 3.1 1.6 4l1.3-.7z" />
+      </svg>
+    </div>
+  );
+}
+
+function CertifiedPill({ color = "green" }) {
+  const isAmber = color === "amber";
+  return (
+    <div
+      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border shadow-2xs self-start ${
+        isAmber
+          ? "bg-[#FEF3C7] text-[#D97706] border-[#FDE68A]"
+          : "bg-[#EDFAF1] text-[#16A34A] border-[#DCFCE7]"
+      }`}
+    >
+      <span
+        className={`w-3.5 h-3.5 rounded-full flex items-center justify-center text-white text-[9px] font-bold ${
+          isAmber ? "bg-[#D97706]" : "bg-[#16A34A]"
+        }`}
+      >
+        ✓
+      </span>
+      <span>Certified</span>
+    </div>
+  );
+}
+
+/* ==========================================================================
+   ACHIEVEMENTS DATA (CONSOLIDATED 4 MILESTONES)
+   ========================================================================== */
+
+const ACHIEVEMENTS_CARDS = [
+  {
+    id: "hackastrom",
+    title: "Hackastrom'25",
+    description: "Secured 2nd Place in a 36-hour national-level hackathon.",
+    iconBg: "bg-[#FFF0ED]",
+    icon: (
+      <Trophy className="w-7 h-7 text-[#E03131]" strokeWidth={2.2} />
+    ),
+    badgeType: "wreath",
+    url: "https://github.com/MAHAVEER-IT",
+  },
+  {
+    id: "mongodb",
+    title: "MongoDB Associate Developer",
+    description: "Professional certification in NoSQL database management.",
+    iconBg: "bg-[#EDFAF1]",
+    icon: <MongoDbLeafIcon />,
+    badgeType: "certified-green",
+    url: "https://www.credly.com/badges/743fc448-d8eb-46a8-8438-7bc7ff250a26/public_url",
+  },
+  {
+    id: "aws",
+    title: "AWS Cloud Practitioner",
+    description:
+      "Professional certification in AWS cloud computing fundamentals.",
+    iconBg: "bg-[#FFFBEB]",
+    icon: <AwsLogoIcon />,
+    badgeType: "certified-amber",
+    url: "https://www.credly.com/badges/00e10b5e-8c1c-4a42-ac61-906250ffeeeb/public_url",
+  },
+  {
+    id: "hackerrank",
+    title: "HackerRank SQL Certification",
+    description: "Validated expertise in complex query optimization.",
+    iconBg: "bg-[#EDFAF1]",
+    icon: <HackerRankIcon />,
+    badgeType: "certified-green",
+    url: "https://www.hackerrank.com/certificates/6bb4eb723ca5",
+  },
+];
+
+/* ==========================================================================
+   ACHIEVEMENTS COMPONENT
+   ========================================================================== */
 
 export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="relative py-24 md:py-32 px-6 md:px-12 bg-brand-bg transition-colors duration-300 overflow-hidden"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}
+      className="relative w-full overflow-hidden bg-[#FFFDF9] text-[#17191F] select-none md:select-auto font-sans scroll-mt-20 pt-16 sm:pt-20 pb-24 md:pb-32 px-6 md:px-12"
     >
-      {/* Background Decorative Blur Spheres */}
-      <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[-10%] w-[300px] h-[300px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* 1. Full-Width Background: Cherry Blossom Valley Village Panorama Artwork */}
+      <div className="absolute inset-0 z-0 pointer-events-none transform-gpu will-change-transform backface-hidden [contain:paint]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/cherry-blossom-valley-panorama.webp"
+          alt="Traditional Cherry Blossom Valley Village Panorama with mountain pagodas, valley rooftops, stone bridge and blooming sakura"
+          className="h-full w-full object-cover object-center transform-gpu backface-hidden opacity-85"
+          fetchPriority="high"
+          decoding="async"
+        />
 
-      <div className="max-w-7xl mx-auto">
-        
+        {/* Soft Porcelain Diffuse Vignette for pristine text & card contrast */}
+        <div
+          className="
+            absolute inset-0
+            bg-[#FFFDF9]/40
+            md:bg-[radial-gradient(ellipse_at_center,_rgba(255,253,249,0.55)_0%,_rgba(255,253,249,0.30)_55%,_rgba(255,253,249,0.65)_100%)]
+          "
+          aria-hidden="true"
+        />
+
+        {/* Top & Bottom Soft Feathering to blend with neighboring sections */}
+        <div
+          className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#FFFDF9]/70 via-[#FFFDF9]/30 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#FFFDF9] via-[#FFFDF9]/80 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* 2. Seamless Falling Sakura Petals Drift */}
+      <CherryBlossomPetals />
+
+      {/* 3. Main Content Container */}
+      <div className="relative z-20 max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col items-start mb-16 md:mb-20">
-          <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-2">Milestones</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-text font-heading leading-tight">
-            Key Achievements
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center mb-12 sm:mb-16"
+        >
+          {/* Eyebrow Pill Badge */}
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#FFF0F0] px-4 py-1.5 text-xs sm:text-sm font-semibold text-[#E03131] border border-[#FEE2E2] shadow-xs">
+            <Trophy className="h-4 w-4 text-[#E03131]" />
+            <span>Achievements</span>
+          </div>
+
+          {/* Main Heading */}
+          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#17191F] font-heading leading-[1.12]">
+            My <span className="text-[#E03131]">Achievements</span>
           </h2>
-          <p className="text-base md:text-lg text-brand-text-muted mt-3 max-w-xl text-left">
-            Honors, hackathon placements, and technical metrics presented in a modern bento layout.
+
+          {/* Subtitle */}
+          <p className="mt-3 text-base sm:text-lg text-[#4B5563] max-w-xl mx-auto font-medium leading-relaxed">
+            A few milestones that reflect my learning, building, and
+            problem-solving journey.
           </p>
+        </motion.div>
+
+        {/* 4. The 4 Milestone Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {ACHIEVEMENTS_CARDS.map((card, index) => {
+            return (
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ y: -6 }}
+                className="
+                  group relative flex flex-col justify-between
+                  p-6 sm:p-7 rounded-[28px] sm:rounded-[32px]
+                  bg-white/92 backdrop-blur-md
+                  border border-white/90
+                  shadow-[0_12px_40px_rgba(0,0,0,0.06)]
+                  hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]
+                  hover:border-[#E03131]/30
+                  transition-all duration-300
+                  min-h-[320px] text-left
+                "
+              >
+                {/* Top Row: Icon Container + Arrow Link */}
+                <div className="flex items-center justify-between w-full">
+                  <div
+                    className={`
+                      w-14 h-14 rounded-2xl
+                      flex items-center justify-center
+                      shrink-0 transition-transform duration-300
+                      group-hover:scale-105
+                      ${card.iconBg}
+                    `}
+                  >
+                    {card.icon}
+                  </div>
+
+                  <a
+                    href={card.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      w-9 h-9 rounded-full
+                      bg-white/80 border border-[#17191F]/6
+                      flex items-center justify-center
+                      text-[#9CA3AF] group-hover:text-[#E03131] group-hover:border-[#E03131]/30
+                      transition-all duration-200 cursor-pointer
+                    "
+                    title={`View ${card.title} credential`}
+                  >
+                    <ArrowUpRight size={17} />
+                  </a>
+                </div>
+
+                {/* Content: Title & Description */}
+                <div className="my-5 flex-1 flex flex-col justify-start">
+                  <h3 className="text-lg sm:text-xl font-bold tracking-tight text-[#17191F] font-heading leading-snug mb-2 group-hover:text-[#E03131] transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-medium">
+                    {card.description}
+                  </p>
+                </div>
+
+                {/* Bottom Badge */}
+                <div className="pt-2 border-t border-[#17191F]/5 w-full">
+                  {card.badgeType === "wreath" ? (
+                    <LaurelWreathBadge text="2nd Place" />
+                  ) : card.badgeType === "certified-amber" ? (
+                    <CertifiedPill color="amber" />
+                  ) : (
+                    <CertifiedPill color="green" />
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
-
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          {/* Card 1: Hackastrom'25 (2 Columns Wide) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            whileHover={{ y: -6 }}
-            className="md:col-span-2 group relative p-8 sm:p-10 rounded-[32px] border border-brand-border bg-brand-card shadow-brand hover:shadow-brand-hover hover:border-primary/20 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[350px]"
-          >
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-            
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10 w-full">
-              {/* Card Details (8 Cols on desktop) */}
-              <div className="lg:col-span-7 flex flex-col items-start text-left">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
-                    <Award size={22} />
-                  </div>
-                  <span className="text-xs font-bold text-primary px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20">
-                    Rank #2
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-bold text-brand-text font-heading leading-tight mb-2">
-                  Hackastrom'25
-                </h3>
-                <p className="text-sm font-semibold text-primary mb-4">
-                  2nd Place Winner & AI Optimization Lead
-                </p>
-                <p className="text-sm text-brand-text-muted leading-relaxed">
-                  Competed in a rigorous 36-hour sprint to build a fully-functional AI-driven energy optimization platform. Engineered predictive models forecasting grid utilization and load balancing.
-                </p>
-              </div>
-
-              {/* Graphic Mockup (5 Cols on desktop) */}
-              <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
-                <div className="w-full max-w-[240px] p-4 rounded-2xl border border-brand-border/60 bg-brand-bg/50 flex flex-col gap-3 relative overflow-hidden group-hover:border-primary/20 transition-colors">
-                  <div className="flex justify-between items-center text-[10px] font-mono text-brand-text-muted">
-                    <span>GRID LOAD OPTIMIZATION</span>
-                    <span className="text-green-500 font-bold">+28% EFF</span>
-                  </div>
-                  
-                  {/* Dynamic SVG Trend Line graph */}
-                  <svg viewBox="0 0 100 40" className="w-full h-16 overflow-visible">
-                    <defs>
-                      <linearGradient id="chart-glow" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.2"/>
-                        <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0"/>
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M0 35 Q 20 20, 40 28 T 80 10 T 100 5"
-                      fill="none"
-                      stroke="var(--color-primary)"
-                      strokeWidth="2"
-                      className="path-animate"
-                      style={{
-                        strokeDasharray: 120,
-                        strokeDashoffset: 0,
-                      }}
-                    />
-                    <path
-                      d="M0 35 Q 20 20, 40 28 T 80 10 T 100 5 L 100 40 L 0 40 Z"
-                      fill="url(#chart-glow)"
-                    />
-                    <circle cx="100" cy="5" r="3" fill="var(--color-accent)" className="animate-ping" />
-                    <circle cx="100" cy="5" r="2" fill="var(--color-primary)" />
-                  </svg>
-
-                  <div className="flex justify-between items-center text-xs font-bold text-brand-text">
-                    <span>Cash Prize</span>
-                    <span className="text-primary font-heading">Rs. 15,000</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 2: LeetCode (1 Column Wide) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            whileHover={{ y: -6 }}
-            className="group relative p-8 sm:p-10 rounded-[32px] border border-brand-border bg-brand-card shadow-brand hover:shadow-brand-hover hover:border-primary/20 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[350px]"
-          >
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col h-full justify-between gap-6">
-              <div className="flex justify-between items-start">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
-                  <Code2 size={22} />
-                </div>
-                <span className="text-xs font-bold text-primary px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20">
-                  200+ Solved
-                </span>
-              </div>
-
-              <div className="text-left flex-1 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-brand-text font-heading leading-tight mb-2">
-                  LeetCode Proficiency
-                </h3>
-                <p className="text-sm text-brand-text-muted leading-relaxed">
-                  Consistently practicing core data structures & algorithm puzzles to secure optimal query latency and memory allocation models.
-                </p>
-              </div>
-
-              {/* Graphic Mockup (Progress Wheel) */}
-              <div className="flex items-center gap-4 border-t border-brand-border/60 pt-4">
-                <svg width="40" height="40" viewBox="0 0 36 36" className="overflow-visible">
-                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="var(--card-border)" strokeWidth="3" />
-                  <circle
-                    cx="18"
-                    cy="18"
-                    r="15.915"
-                    fill="none"
-                    stroke="var(--color-primary)"
-                    strokeWidth="3.5"
-                    strokeDasharray="72 28"
-                    strokeDashoffset="25"
-                    strokeLinecap="round"
-                  />
-                  <text x="18" y="21.5" className="text-[8px] font-bold font-mono text-center" textAnchor="middle" fill="var(--text-primary)">
-                    72%
-                  </text>
-                </svg>
-                <div className="flex flex-col text-left text-xs font-mono text-brand-text-muted">
-                  <span className="text-brand-text font-bold">Medium / Hard</span>
-                  <span>Accuracy Rate</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 3: Freshothon (1 Column Wide) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ y: -6 }}
-            className="group relative p-8 sm:p-10 rounded-[32px] border border-brand-border bg-brand-card shadow-brand hover:shadow-brand-hover hover:border-primary/20 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[350px]"
-          >
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col h-full justify-between gap-6">
-              <div className="flex justify-between items-start">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
-                  <Trophy size={22} />
-                </div>
-                <span className="text-xs font-bold text-primary px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20">
-                  Rank #3
-                </span>
-              </div>
-
-              <div className="text-left flex-1 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-brand-text font-heading leading-tight mb-2">
-                  Freshothon
-                </h3>
-                <p className="text-sm font-semibold text-primary mb-3">
-                  3rd Place Hackathon Winner
-                </p>
-                <p className="text-sm text-brand-text-muted leading-relaxed">
-                  Competed with over 150+ student teams to conceptualize and build a smart civic safety mapping solution in a 24-hour hackathon.
-                </p>
-              </div>
-
-              {/* Graphic: 24h Timeline Pulse */}
-              <div className="flex items-center gap-3 border-t border-brand-border/60 pt-4">
-                <span className="relative flex h-3.5 w-3.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-red-500"></span>
-                </span>
-                <span className="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">
-                  24h Speed sprint completed
-                </span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 4: Project Expo (2 Columns Wide) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            whileHover={{ y: -6 }}
-            className="md:col-span-2 group relative p-8 sm:p-10 rounded-[32px] border border-brand-border bg-brand-card shadow-brand hover:shadow-brand-hover hover:border-primary/20 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[350px]"
-          >
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10 w-full">
-              {/* Card Details (7 Cols) */}
-              <div className="lg:col-span-7 flex flex-col items-start text-left">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
-                    <Sparkles size={22} />
-                  </div>
-                  <span className="text-xs font-bold text-primary px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20">
-                    Rank #3
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-bold text-brand-text font-heading leading-tight mb-2">
-                  Sri Eshwar Project Expo
-                </h3>
-                <p className="text-sm font-semibold text-primary mb-4">
-                  3rd Place Winner & Social Impact Award
-                </p>
-                <p className="text-sm text-brand-text-muted leading-relaxed">
-                  Presented our AI agricultural assistant **Sow & Grow** to a panel of corporate judges. Evaluated on user design, engineering scalability, and local-first offline image classifications.
-                </p>
-              </div>
-
-              {/* Graphic Mockup: Scores Breakdown (5 Cols) */}
-              <div className="lg:col-span-5 w-full h-full flex items-center justify-center">
-                <div className="w-full max-w-[240px] p-5 rounded-2xl border border-brand-border/60 bg-brand-bg/50 flex flex-col gap-3 group-hover:border-primary/20 transition-colors">
-                  <span className="text-[10px] font-mono text-brand-text-muted">EXHIBITION CRITERIA SCORE</span>
-                  
-                  <div className="flex flex-col gap-2">
-                    {/* Item 1 */}
-                    <div className="flex flex-col gap-1">
-                      <div className="flex justify-between text-[11px] font-bold text-brand-text">
-                        <span>Viability</span>
-                        <span>9.5/10</span>
-                      </div>
-                      <div className="w-full h-1.5 rounded-full bg-brand-border overflow-hidden">
-                        <motion.div 
-                          className="h-full bg-green-500 rounded-full" 
-                          initial={{ width: 0 }}
-                          whileInView={{ width: "95%" }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: 0.4 }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Item 2 */}
-                    <div className="flex flex-col gap-1">
-                      <div className="flex justify-between text-[11px] font-bold text-brand-text">
-                        <span>UX Execution</span>
-                        <span>9.0/10</span>
-                      </div>
-                      <div className="w-full h-1.5 rounded-full bg-brand-border overflow-hidden">
-                        <motion.div 
-                          className="h-full bg-primary rounded-full" 
-                          initial={{ width: 0 }}
-                          whileInView={{ width: "90%" }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: 0.5 }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Item 3 */}
-                    <div className="flex flex-col gap-1">
-                      <div className="flex justify-between text-[11px] font-bold text-brand-text">
-                        <span>Architecture</span>
-                        <span>8.8/10</span>
-                      </div>
-                      <div className="w-full h-1.5 rounded-full bg-brand-border overflow-hidden">
-                        <motion.div 
-                          className="h-full bg-accent rounded-full" 
-                          initial={{ width: 0 }}
-                          whileInView={{ width: "88%" }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: 0.6 }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-        </div>
-
       </div>
     </section>
   );
